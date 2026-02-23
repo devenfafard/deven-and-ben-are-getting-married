@@ -7,7 +7,7 @@ const Header = () =>
     return (
         <div className="header">
             <div className="header-content">
-                <p>foot</p>
+                <p></p>
             </div>
 
         </div>

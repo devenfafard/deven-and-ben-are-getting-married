@@ -3,16 +3,26 @@
     background-color: #062213;
     fill: #062213;
 
-    height: auto;
+    height: 100%;
     width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: end;
 }
 
 .footer-content
 {
-    margin: 0% 5% 5% 5%;
+    margin-bottom: 2%;
 }
 
 .footer p
 {
-    color: #CDB084;
+    color: #3d472f;
+}
+
+.wave
+{
+    align-self: center;
 }
