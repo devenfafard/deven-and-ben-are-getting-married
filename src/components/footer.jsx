@@ -7,14 +7,18 @@ const Footer = () =>
 {
     const d = new Date();
     let year = d.getFullYear();
+    let yearLink = "https://getfullyear.com"
 
     return (
         <div className="footer">
             <Wave/>
             <div className="footer-content">
-                <p>Copyright © {year} Beven, All Right Reserved.</p>
+                <p>
+                    Made with ❤ by Ben & Deven
+                    <br/>
+                    © <a href={yearLink}>{year}</a>
+                </p>
             </div>
-
         </div>
     )
 }
