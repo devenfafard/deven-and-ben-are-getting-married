@@ -3,33 +3,46 @@ import React from "react";
 import './infoCard.css';
 import Wave from '../components/wave.jsx';
 
-const infoCard = ({color, title, desc, showWave, spaceText}) =>
+import SecurityLevel from "../Data/SecurityLevel.jsx";
+
+const infoCard = ({color = "Transparent", title = "", body = "",showBox = false, showWave = false, mirrorWave = false, securityLevelNeeded = 0}) =>
 {
-    if (showWave)
+    let wave = '';
+    if(showWave)
     {
-        return (
-            <div className="info-card" style={{backgroundColor: color, fill: color}}>
-                <Wave/>
-                <p>{spaceText}</p>
-                <div className="info-card-content">
-                    <h2>{title}</h2>
-                    <p>{desc}</p>
-                </div>
-            </div>
-        )
+        wave = <Wave/>;
+
+        if(mirrorWave)
+        {
+            wave = <Wave isMirror={true}/>;
+        }
+    }
+
+    let textBox = '';
+
+    if(showBox)
+    {
+        textBox = <div className="info-card-box"><h2>{title}</h2><p>{body}</p></div>
     }
     else
     {
-        return (
-            <div className="info-card" style={{backgroundColor: color, fill: color}}>
-                <p>{title}</p>
-                <div className="info-card-content">
-                    <h2>{title}</h2>
-                    <p>{desc}</p>
-                </div>
-            </div>
-        )
+        textBox = <div className="info-card-content"><h2>{title}</h2><p>{body}</p></div>;
     }
+
+    console.log(SecurityLevel.prototype.level);
+    if(SecurityLevel.prototype.level > securityLevelNeeded)
+    {
+
+        textBox = '';
+        //textBox = <div className="info-card-box"><h2>"Sign in here!"</h2></div>;
+    }
+
+    return (
+        <div className="info-card" style={{backgroundColor: color, fill: color}}>
+            {wave}
+            {textBox}
+        </div>
+    )
 }
 
 export default infoCard;
