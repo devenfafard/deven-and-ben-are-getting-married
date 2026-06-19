@@ -17,7 +17,7 @@ const Home = () =>
             <div className="home-content">
                     <InfoCard showWave={true} mirrorWave={true} color={'#e9dfdd'} title={"HECK YEAH WE ARE!"} body={"This site is a hub with information on all of our wedding related festivities. Check back frequently for updates as we get closer to the big day! "}/>
                     <InfoCard showWave={true} color={'#CDB084'} body={"This site is a hub with information on all of our wedding related festivities. Check back frequently for updates as we get closer to the big day! "}/>
-                    <InfoCard securityLevelNeeded={2} showWave={true} mirrorWave={true} color={'#3d472f'} title={"Engagement Party!"} body={"its gonna be like a dragon or somethins"}/>
+                    <InfoCard securityLevelNeeded={1} showWave={true} mirrorWave={true} color={'#3d472f'} title={"Engagement Party!"} body={"its gonna be like a dragon or somethins"}/>
             </div>
         </div>
     )

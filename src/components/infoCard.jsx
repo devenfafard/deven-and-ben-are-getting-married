@@ -29,12 +29,15 @@ const infoCard = ({color = "Transparent", title = "", body = "",showBox = false,
         textBox = <div className="info-card-content"><h2>{title}</h2><p>{body}</p></div>;
     }
 
-    console.log(SecurityLevel.prototype.level);
-    if(SecurityLevel.prototype.level > securityLevelNeeded)
+    if(SecurityLevel.GetLevel() < securityLevelNeeded)
     {
+        textBox = <div className="info-card-box"><h2>Sign in here!</h2><button onClick={()=>{AddSecurityLevel()}} >Bump it up</button></div>;
+    }
 
-        textBox = '';
-        //textBox = <div className="info-card-box"><h2>"Sign in here!"</h2></div>;
+    function AddSecurityLevel()
+    {
+        SecurityLevel.AddLevel();
+        window.location.reload();
     }
 
     return (
