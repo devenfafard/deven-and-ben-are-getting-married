@@ -23,5 +23,5 @@ public static class Constants
     public static string AppTitle => $"{nameof(beven)}.{nameof(wedding)}.{nameof(functions)}";
     
     // File extensions
-    public static string JSON_EXTENSION = ".json";
+    public static string JsonExtension = ".json";
 }

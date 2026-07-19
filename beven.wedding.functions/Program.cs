@@ -12,19 +12,17 @@ public static class Program
     public static async Task Main()
     {
         // Build temp logger to catch errors on startup, then replace with logger built in .UseSerilog in BuildHost()
-       // Log.Logger = Logger.Configure().CreateBootstrapLogger();
+       Log.Logger = Logger.Configure().CreateBootstrapLogger();
 
         try
         {
-            /*Log.Information("====== Started {AppTitle} ======", Constants.AppTitle);
-
-            // Add handler to log unhandled exceptions
-            TaskScheduler.UnobservedTaskException += Handle_UnobservedTaskException;
-
+            Log.Information("====== Started {AppTitle} ======", Constants.AppTitle);
             
-
-            Log.Information("Successfully built host!");*/
+            TaskScheduler.UnobservedTaskException += Handle_UnobservedTaskException;
             var host = BuildHost();
+
+            Log.Information("Successfully built host! :)");
+            
             await host.RunAsync();
         }
         catch (OptionsValidationException exception) 
@@ -56,20 +54,20 @@ public static class Program
     private static IHost BuildHost() =>
         Host.CreateDefaultBuilder()
             .ConfigureFunctionsWorkerDefaults()
-            /*.ConfigureAppConfiguration(static (context, config) =>
+            .ConfigureAppConfiguration(static (context, config) =>
             {
                 var environment = context.HostingEnvironment;
 
                 config.AddRequiredJsonFile("appsettings", environment);
                 config.AddRequiredJsonFile("appsettings.Serilog", environment);
-            })*/
+            })
             .ConfigureServices(static (context, services) =>
             {
                 var configuration = context.Configuration;
 
                 services.AddSafeguardServices(configuration);
             })
-            //.UseSerilog()
+            .UseSerilog()
             .Build();
 
     private static void Handle_UnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs args)
@@ -85,13 +83,13 @@ public static class Program
     private static void AddRequiredJsonFile(this IConfigurationBuilder builder, string filename,
         IHostEnvironment environment)
     {
-        var productionPath = $"{filename}{Constants.JSON_EXTENSION}";
+        var productionPath = $"{filename}{Constants.JsonExtension}";
         builder.AddJsonFile(productionPath, false);
         
         // Add non-prod app settings after prod so that non-prod settings only need to include what needs to be overwritten
         if (environment.IsDevelopment() is false)
         {
-            var nonProductionPath = $"{filename}.{environment}{Constants.JSON_EXTENSION}";
+            var nonProductionPath = $"{filename}.{environment}{Constants.JsonExtension}";
             builder.AddJsonFile(nonProductionPath, false);
         }
     }
