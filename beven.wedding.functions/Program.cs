@@ -12,19 +12,19 @@ public static class Program
     public static async Task Main()
     {
         // Build temp logger to catch errors on startup, then replace with logger built in .UseSerilog in BuildHost()
-        Log.Logger = Logger.Configure().CreateBootstrapLogger();
+       // Log.Logger = Logger.Configure().CreateBootstrapLogger();
 
         try
         {
-            Log.Information("====== Started {AppTitle} ======", Constants.AppTitle);
+            /*Log.Information("====== Started {AppTitle} ======", Constants.AppTitle);
 
             // Add handler to log unhandled exceptions
             TaskScheduler.UnobservedTaskException += Handle_UnobservedTaskException;
 
+            
+
+            Log.Information("Successfully built host!");*/
             var host = BuildHost();
-
-            Log.Information("Successfully built host!");
-
             await host.RunAsync();
         }
         catch (OptionsValidationException exception) 
@@ -56,20 +56,20 @@ public static class Program
     private static IHost BuildHost() =>
         Host.CreateDefaultBuilder()
             .ConfigureFunctionsWorkerDefaults()
-            .ConfigureAppConfiguration(static (context, config) =>
+            /*.ConfigureAppConfiguration(static (context, config) =>
             {
                 var environment = context.HostingEnvironment;
 
                 config.AddRequiredJsonFile("appsettings", environment);
                 config.AddRequiredJsonFile("appsettings.Serilog", environment);
-            })
+            })*/
             .ConfigureServices(static (context, services) =>
             {
                 var configuration = context.Configuration;
 
                 services.AddSafeguardServices(configuration);
             })
-            .UseSerilog()
+            //.UseSerilog()
             .Build();
 
     private static void Handle_UnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs args)

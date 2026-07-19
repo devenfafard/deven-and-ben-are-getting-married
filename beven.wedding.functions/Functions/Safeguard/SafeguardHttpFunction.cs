@@ -10,10 +10,10 @@ using Microsoft.Extensions.Logging;
 
 namespace beven.wedding.functions.Functions.Safeguard;
 
-public class SafeguardFunctionController(ILogger<SafeguardFunctionController> logger, SafeguardDtoValidator validator)
+public class SafeguardHttpFunction(ILogger<SafeguardHttpFunction> logger, SafeguardDtoValidator validator)
     : BaseController
 {
-    [Function(nameof(SafeguardFunctionController))]
+    [Function(nameof(SafeguardHttpFunction))]
     public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, WebRequestMethods.Http.Get, Route = nameof(Safeguard))]
         HttpRequestData request)
     {
