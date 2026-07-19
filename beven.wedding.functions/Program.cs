@@ -83,13 +83,13 @@ public static class Program
     private static void AddRequiredJsonFile(this IConfigurationBuilder builder, string filename,
         IHostEnvironment environment)
     {
-        var productionPath = $"{filename}{Constants.JsonExtension}";
+        var productionPath = $"{filename}{Constants.JSON_EXTENSION}";
         builder.AddJsonFile(productionPath, false);
         
         // Add non-prod app settings after prod so that non-prod settings only need to include what needs to be overwritten
         if (environment.IsDevelopment() is false)
         {
-            var nonProductionPath = $"{filename}.{environment}{Constants.JsonExtension}";
+            var nonProductionPath = $"{filename}.{environment}{Constants.JSON_EXTENSION}";
             builder.AddJsonFile(nonProductionPath, false);
         }
     }
