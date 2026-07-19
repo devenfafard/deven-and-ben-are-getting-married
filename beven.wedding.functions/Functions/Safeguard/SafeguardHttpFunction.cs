@@ -2,7 +2,6 @@
 using System.Text.Json;
 using beven.wedding.functions.Infrastructure;
 using beven.wedding.functions.Infrastructure.Api;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
@@ -18,11 +17,6 @@ public class SafeguardHttpFunction(ILogger<SafeguardHttpFunction> logger, Safegu
         HttpRequestData request)
     {
         using var memoryStream = new MemoryStream();
-
-        if (request is null)
-        {
-            return BadRequestResponse([Constants.NO_SAFEGUARD_MESSAGE]);
-        }
         
         await request.Body.CopyToAsync(memoryStream);
 
@@ -32,13 +26,17 @@ public class SafeguardHttpFunction(ILogger<SafeguardHttpFunction> logger, Safegu
 
         if (deserializedSafeguardDto is null)
         {
+            logger.LogWarning(Constants.NO_SAFEGUARD_MESSAGE);
+            
             return BadRequestResponse([Constants.NO_SAFEGUARD_MESSAGE]);
         }
 
         var validationResult = await validator.ValidateAsync(deserializedSafeguardDto);
 
         if (validationResult.IsValid is false)
+        {
             return BadRequestResponse(validationResult.Errors.Select(static e => e.ErrorMessage));
+        }
 
         return OkResponse("the thing workded!");
     }
