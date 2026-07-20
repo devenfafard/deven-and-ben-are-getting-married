@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Hosting;
 
 namespace beven.wedding.functions.Infrastructure;
-/*
+
 public static class AzureCredentialProvider
 {
     private static ChainedTokenCredential? _credential;
@@ -18,6 +18,8 @@ public static class AzureCredentialProvider
 
         _credential = isDevelopment
             ? new ChainedTokenCredential(new AzureCliCredential(), new VisualStudioCredential())
-            : new ChainedTokenCredential(new ManagedIdentityCredential());
+            : new ChainedTokenCredential(new ManagedIdentityCredential(new ManagedIdentityCredentialOptions()));
+        
+        return _credential;
     }
-}*/
+}

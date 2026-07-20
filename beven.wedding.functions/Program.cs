@@ -1,6 +1,7 @@
-﻿using beven.wedding.functions.Functions.Safeguard;
+﻿using beven.wedding.functions.Functions.Defcon;
 using beven.wedding.functions.Infrastructure;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Serilog;
@@ -21,6 +22,7 @@ public static class Program
             TaskScheduler.UnobservedTaskException += Handle_UnobservedTaskException;
             var host = BuildHost();
 
+            
             Log.Information("Successfully built host! :)");
             
             await host.RunAsync();
@@ -63,9 +65,9 @@ public static class Program
             })
             .ConfigureServices(static (context, services) =>
             {
-                var configuration = context.Configuration;
-
-                services.AddSafeguardServices(configuration);
+                services.AddSingleton(context.GetAzureCredential())
+                        .AddInfrastructureServices()
+                        .AddDefconServices();
             })
             .UseSerilog()
             .Build();

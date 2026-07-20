@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using JetBrains.Annotations;
 
-namespace beven.wedding.functions.Functions.Safeguard;
+namespace beven.wedding.functions.Domain.Safeguard;
 
 [UsedImplicitly]
 public class SafeguardDtoValidator: AbstractValidator<SafeguardDto>

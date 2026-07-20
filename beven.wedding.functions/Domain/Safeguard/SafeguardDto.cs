@@ -1,6 +1,6 @@
 ﻿using beven.wedding.functions.Infrastructure;
 
-namespace beven.wedding.functions.Functions.Safeguard;
+namespace beven.wedding.functions.Domain.Safeguard;
 
 public class SafeguardDto
 {
