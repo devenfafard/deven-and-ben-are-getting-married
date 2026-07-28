@@ -48,3 +48,17 @@ nunit-*.xml
 # Rider
 .idea/
 *.sln.iml
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+x64/
+x86/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
