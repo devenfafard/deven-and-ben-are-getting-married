@@ -1,6 +1,5 @@
-﻿using beven.wedding.functions.Domain.Person;
+using beven.wedding.functions.Domain.Person;
 using beven.wedding.functions.Domain.Safeguard;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace beven.wedding.functions.Functions.Defcon;

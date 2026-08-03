@@ -11,17 +11,18 @@ using Microsoft.Extensions.Logging;
 
 namespace beven.wedding.functions.Functions.Defcon;
 
-public class DefconHttpFunction(ILogger<DefconHttpFunction> logger, 
+public class DefconHttpFunction(ILogger<DefconHttpFunction> logger,
                                 SafeguardDtoValidator validator,
                                 PersonRepository repository)
     : BaseController
 {
     [Function(nameof(DefconHttpFunction))]
-    public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, WebRequestMethods.Http.Get, Route = nameof(Defcon))]
+    public async Task<IActionResult> Run(
+        [HttpTrigger(AuthorizationLevel.Anonymous, WebRequestMethods.Http.Get, Route = nameof(Defcon))]
         HttpRequestData request)
     {
         using var memoryStream = new MemoryStream();
-        
+
         await request.Body.CopyToAsync(memoryStream);
 
         memoryStream.Position = Constants.START_OF_STREAM;
@@ -31,7 +32,7 @@ public class DefconHttpFunction(ILogger<DefconHttpFunction> logger,
         if (deserializedSafeguardDto is null)
         {
             logger.LogWarning(Constants.NO_SAFEGUARD_MESSAGE);
-            
+
             return BadRequestResponse([Constants.NO_SAFEGUARD_MESSAGE]);
         }
 
@@ -42,9 +43,8 @@ public class DefconHttpFunction(ILogger<DefconHttpFunction> logger,
             return BadRequestResponse(validationResult.Errors.Select(static e => e.ErrorMessage));
         }
 
-        var people = await repository.GetPeopleInGroupAsync(deserializedSafeguardDto.Data);
-        var xxx = people.Select(p => p.DefconLevel).First();
-
-        return OkResponse(xxx);
+        var result = repository.GetPeopleInGroupAsync(deserializedSafeguardDto.Data);
+        
+        return OkResponse(result);
     }
 }

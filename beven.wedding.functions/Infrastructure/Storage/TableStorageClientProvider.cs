@@ -1,20 +1,23 @@
-﻿using System.Collections.Concurrent;
+using System;
+using System.Collections.Concurrent;
+using System.Linq;
+using System.Threading;
 using Azure.Data.Tables;
 using Azure.Identity;
-using beven.wedding.functions.Infrastructure.Storage.Definitions;
 
-namespace beven.wedding.functions.Infrastructure.Storage.TableStorageClientProvider;
+namespace beven.wedding.functions.Infrastructure.Storage;
 
-public class TableStorageClientProvider<TTableName> : ITableStorageClientProvider<TTableName> where TTableName : Enum
+public class TableStorageClientProvider<TTableName> where TTableName : Enum
 {
-    private const string URL_FORMAT = "https://{0}.table.core.windows.net/";
+    private const string UrlFormat = "https://{0}.table.core.windows.net/";
+    private const string StorageAccountName = "bwprodpeople";
     
     private readonly TableServiceClient                                  _tableServiceClient;
     private readonly ConcurrentDictionary<TTableName, Lazy<TableClient>> _tableClientsByName = new();
     
     public TableStorageClientProvider(ChainedTokenCredential credential)
     {
-        var uri = new Uri(string.Format(URL_FORMAT, nameof(StorageAccount.People)));
+        var uri = new Uri(string.Format(UrlFormat, StorageAccountName));
         
         _tableServiceClient = new TableServiceClient(uri, credential);
 
@@ -51,6 +54,4 @@ public class TableStorageClientProvider<TTableName> : ITableStorageClientProvide
         return client?.Value ??
                throw new InvalidOperationException($"Failed to find table client for table '{name}'.");
     }
-    
-    
 }

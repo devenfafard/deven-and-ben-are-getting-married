@@ -3,23 +3,26 @@
     background-color: #062213;
     fill: #062213;
 
-    height: 35%;
+    height: 5%;
     width: 100%;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: end;
+    align-items: start;
 }
 
 .footer-content
 {
+    margin-top: 0;
     margin-bottom: 2%;
 }
 
 .footer p
 {
     color: #3d472f;
+    font-size: 25px;
+    line-height: 35px;
 }
 
 .wave
