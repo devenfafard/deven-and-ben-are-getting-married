@@ -6,8 +6,6 @@ import SecurityLevel from "../Data/SecurityLevel.jsx";
 
 const Home = () =>
 {
-//#CDB084
-    // TODO - make text box component to pass to info card and add padding
     return (
         <div className="home">
             <div className="landing">

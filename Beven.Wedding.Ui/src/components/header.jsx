@@ -1,15 +1,57 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
+import {useNavigate} from "react-router-dom";
 
 import './header.css';
 
 const Header = () =>
 {
+    const [scrollPercentage, setScrollPercentage] = useState(0);
+
+    useEffect(()=>{
+        const handleScroll = ()=>
+        {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollY = window.scrollY;
+
+            const scrollPercent = (scrollY / (documentHeight - windowHeight))*100
+
+            setScrollPercentage(scrollPercent)
+            console.log(scrollPercent)
+        }
+
+        window.addEventListener("scroll", handleScroll);
+
+        return()=>{
+            window.removeEventListener("scroll", handleScroll)
+        }
+
+    },[])
+
+    var headerClassName = "header";
+    if (scrollPercentage > 30)
+    {
+         headerClassName = " header-floating";
+    }
+    else
+    {
+        headerClassName = " header";
+    }
+
+    const navigate = useNavigate();
+
     return (
-        <div className="header">
-            <div className="header-content">
-                <p></p>
+        <div className={headerClassName}>
+            <div className="header-left">
+                <button className="header-button" onClick={() => { navigate("/")}}>
+                    <img className="header-icon" src="src/assets/Balerion.jpg" alt={null}></img>
+                </button>
             </div>
 
+            <div className="header-right">
+                <button onClick={() => { navigate("/")}}>Home</button>
+                <button onClick={() => { navigate("/")}}>Gallery</button>
+            </div>
         </div>
     )
 }
