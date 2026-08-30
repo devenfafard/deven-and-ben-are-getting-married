@@ -1,0 +1,48 @@
+.imageButton
+{
+    display: flex;
+
+    border-radius: 10px;
+    border: 0;
+
+    padding: 0;
+    margin: 1%;
+
+    box-shadow: #213547 -4px 10px 5px;
+}
+
+.imageButton button
+{
+    background-color: #213547;
+
+    width: 100%;
+
+    object-fit: contain;
+}
+
+.imageButton:hover
+{
+
+}
+
+.imageButton img
+{
+    width: 100%;
+    height: auto;
+
+    border-radius: 10px;
+
+}
+
+.imageButton img:hover
+{
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 800px)
+{
+    .imageButton
+    {
+        width: 75%;
+    }
+}

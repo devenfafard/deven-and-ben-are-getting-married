@@ -1,0 +1,52 @@
+.gallery
+{
+    width: 100%;
+    height: auto;
+
+    background-color: #e9dfdd;
+}
+
+.gallery-top
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding-top: 5%;
+    height: 25vh;
+}
+
+.gallery-wall
+{
+    background-color: #CDB084;
+    fill: #CDB084;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+
+    height: 50vh;
+
+    padding-bottom: 4%;
+}
+
+.gallery-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 80%;
+    padding-top: 0;
+
+    background-color: rgba(255, 255, 255, 0.2);
+
+    border-radius: 30px;
+}
+
+.gallery-container button
+{
+    width: 15%;
+    height: auto;
+}

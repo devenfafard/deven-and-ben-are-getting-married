@@ -2,7 +2,6 @@ import React from "react";
 
 import './home.css';
 import InfoCard from "../components/infoCard.jsx";
-import SecurityLevel from "../Data/SecurityLevel.jsx";
 
 const Home = () =>
 {

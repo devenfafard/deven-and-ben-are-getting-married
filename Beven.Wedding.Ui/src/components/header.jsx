@@ -17,7 +17,7 @@ const Header = () =>
             const scrollPercent = (scrollY / (documentHeight - windowHeight))*100
 
             setScrollPercentage(scrollPercent)
-            console.log(scrollPercent)
+            // console.log(scrollPercent)
         }
 
         window.addEventListener("scroll", handleScroll);
@@ -50,7 +50,7 @@ const Header = () =>
 
             <div className="header-right">
                 <button onClick={() => { navigate("/")}}>Home</button>
-                <button onClick={() => { navigate("/")}}>Gallery</button>
+                <button onClick={() => { navigate("/gallery")}}>Gallery</button>
             </div>
         </div>
     )

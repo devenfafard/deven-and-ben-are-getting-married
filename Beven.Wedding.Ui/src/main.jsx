@@ -7,13 +7,14 @@ import Header from "./components/header.jsx";
 import Footer from './components/footer.jsx';
 
 import Home from "./pages/home.jsx";
+import Gallery from "./pages/gallery.jsx";
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
         <Header/>
         <Routes>
-            <Route path="/" element={<Home  />}/>
-
+            <Route path="/" element={<Home/>}/>
+            <Route path="/gallery" element={<Gallery/>}/>
         </Routes>
         <Footer/>
     </BrowserRouter>
