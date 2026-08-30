@@ -1,9 +1,9 @@
 import "./imageButton.css"
 
-const ImageButton = ({image, button}) =>
+const ImageButton = ({image, onClick}) =>
 {
     return (
-        <button className="imageButton" onClick={button}>
+        <button className="imageButton" onClick={onClick}>
             <img src={image} alt="image not loading"/>
         </button>
     )

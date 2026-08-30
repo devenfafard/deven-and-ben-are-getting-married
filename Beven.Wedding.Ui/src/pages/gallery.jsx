@@ -4,7 +4,7 @@ import './gallery.css';
 import Wave from '../components/wave.jsx';
 import ImageButton from "../components/imageButton.jsx";
 
-const Gallery = () =>
+const Gallery = ({openPopUp}) =>
 {
     return (
         <div className="gallery">
@@ -16,13 +16,7 @@ const Gallery = () =>
                 <Wave isMirror={true}/>
 
                 <div className="gallery-container">
-                    <ImageButton button={null} image="src/assets/Balerion.jpg"/>
-                    <ImageButton button={null} image="src/assets/Balerion.jpg"/>
-                    <ImageButton button={null} image="src/assets/Balerion.jpg"/>
-                    <ImageButton button={null} image="src/assets/Balerion.jpg"/>
-                    <ImageButton button={null} image="src/assets/Balerion.jpg"/>
-                    <ImageButton button={null} image="src/assets/Balerion.jpg"/>
-                    <ImageButton button={null} image="src/assets/Balerion.jpg"/>
+                    <ImageButton onClick={openPopUp} image="src/assets/gallery/IMG_0553_20250830_101618.jpg"/>
                 </div>
             </div>
         </div>
