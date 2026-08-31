@@ -26,9 +26,9 @@
     align-content: flex-start;
     justify-content: center;
 
-    height: 50vh;
+    height: auto;
 
-    padding-bottom: 4%;
+    padding-bottom: 5%;
 }
 
 .gallery-container
@@ -49,4 +49,6 @@
 {
     width: 15%;
     height: auto;
+
+    aspect-ratio: 1/1;
 }

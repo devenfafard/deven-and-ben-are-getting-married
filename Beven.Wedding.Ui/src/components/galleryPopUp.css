@@ -1,10 +1,69 @@
 .galleryPopUp
 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     position: fixed;
-    z-index: 3;
+    z-index: 2;
 
     height: 100%;
     width: 100%;
 
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(15,15,15,0.75);
+}
+
+.closeButton
+{
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+}
+
+.imageContainer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 90%;
+    width: auto;
+    border-radius: 30px;
+    aspect-ratio: 1;
+
+    background-color: rgba(15,15,15);
+}
+
+.gallery-image
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.imageContainer h2
+{
+    position: absolute;
+    align-self: flex-end;
+
+    color: white;
+}
+
+.arrow-left
+{
+    position: absolute;
+    left: 28%;
+
+    height: 15%;
+    width: auto;
+    aspect-ratio: 1;
+}
+
+.arrow-right
+{
+    position: absolute;
+    right: 28%;
+
+    height: 15%;
+    aspect-ratio: 1;
 }

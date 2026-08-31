@@ -16,8 +16,6 @@
     background-color: #213547;
 
     width: 100%;
-
-    object-fit: contain;
 }
 
 .imageButton:hover
@@ -32,6 +30,7 @@
 
     border-radius: 10px;
 
+    object-fit: cover;
 }
 
 .imageButton img:hover
