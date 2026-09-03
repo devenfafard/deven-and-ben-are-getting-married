@@ -9,6 +9,7 @@ import Footer from './components/footer.jsx';
 
 import Home from "./pages/home.jsx";
 import Gallery from "./pages/gallery.jsx";
+import SaveTheDate from "./pages/saveTheDate.jsx";
 
 const Main = () =>
 {
@@ -18,6 +19,7 @@ const Main = () =>
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/gallery" element={<Gallery/>}/>
+                <Route path="/save-the-date" element={<SaveTheDate/>}/>
             </Routes>
             <Footer/>
         </BrowserRouter>

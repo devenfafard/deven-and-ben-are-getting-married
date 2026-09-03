@@ -31,7 +31,7 @@ const infoCard = ({color = "Transparent", title = "", body = "",showBox = false,
 
     if(SecurityLevel.GetLevel() < securityLevelNeeded)
     {
-        textBox = <div className="info-card-box"><h2>Sign in here!</h2><button onClick={()=>{AddSecurityLevel()}} >Bump it up</button></div>;
+        textBox = <div className="info-card-box"><h2>Sign in to see more</h2><button onClick={()=>{AddSecurityLevel()}} >Bump it up</button></div>;
     }
 
     function AddSecurityLevel()

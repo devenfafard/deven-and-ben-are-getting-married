@@ -1,0 +1,174 @@
+.saveTheDate
+{
+    width: 100%;
+    height: auto;
+    background-color: var(--pure-white);
+}
+
+.saveTheDate-top
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+
+    padding-top: 10%;
+    padding-left: 15%;
+    height: 15vh;
+
+    background-color: #062213;
+    fill: #062213;
+
+    font-family: "Agbalumo", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 64px;
+    color: #CDB084;
+}
+
+.saveTheDate-middle
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding-top: 10%;
+    height: 15vh;
+
+    background-color: #062213;
+    fill: #062213;
+}
+
+.saveTheDate-bottom
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-right: 15%;
+    height: 15vh;
+
+    background-color: #062213;
+    fill: #062213;
+}
+
+.saveTheDate-content-section
+{
+    background-color: #e9dfdd;
+    fill: #e9dfdd;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+
+    width: 100%;
+    height: 80%;
+
+    padding-bottom: 5%;
+}
+
+.saveTheDate-container
+{
+    background-color: #CDB084;
+    fill: #CDB084;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+
+    height: auto;
+
+    padding-bottom: 5%;
+}
+
+.saveTheDate-container h1
+{
+    font-family: "Agbalumo", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 42px;
+    color: #3d472f !important;
+}
+
+.saveTheDate h1
+{
+    font-family: "Agbalumo", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 64px;
+    color: #CDB084;
+}
+
+.saveTheDate h2
+{
+    font-family: "Agbalumo", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 42px;
+    color: #3d472f !important;
+}
+
+.saveTheDate h3
+{
+    font-family: "Alata", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 48px;
+    color: #CDB084;
+}
+
+.saveTheDate h4
+{
+    font-family: "Alata", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 36px;
+    color: #CDB084;
+    vertical-align: center;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.saveTheDate h6
+{
+    font-family: "Agbalumo", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 34px;
+    color: #3d472f !important;
+    line-height: 1.5;
+}
+
+.saveTheDate-leftInfoBox
+{
+    width: 50%;
+    padding-left: 2%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.saveTheDate-rightInfoBox
+{
+    width: 50%;
+    padding-right: 2%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.saveTheDate-locationPanel
+{
+    background-color: #CDB084;
+    fill: #CDB084;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    height: auto;
+
+    padding-bottom: 5%;
+}

@@ -20,7 +20,6 @@ h1
   line-height: 1.1;
   color: #23221D;
   font-weight: 800;
-
 }
 
 h2
@@ -34,14 +33,13 @@ p
 {
   color: #23221D;
   line-height: 28px;
-
 }
 
 body
 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Alata", sans-serif;
   font-weight: 400;
-  line-height: 1.5;
+  font-style: normal;
 }
 
 li
@@ -65,6 +63,27 @@ button
   border-color: transparent;
   background-color: transparent;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-family: "Alata", sans-serif;
+}
+
+.agbalumo-regular {
+  font-family: "Agbalumo", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.alata-regular
+{
+  font-family: "Alata", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+}
+
+.momo-trust-display-regular {
+  font-family: "Momo Trust Display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @media screen and (max-width: 800px)
@@ -83,5 +102,12 @@ button
   li
   {
     font-size: large;
+  }
+
+  :root {
+    --dark-green: #062213;
+    --light-green: #3d472f;
+    --pure-white: #e9dfdd;
+    --tan: #CDB08;
   }
 }
