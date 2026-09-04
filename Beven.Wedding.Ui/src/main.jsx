@@ -13,6 +13,8 @@ import SaveTheDate from "./pages/saveTheDate.jsx";
 
 const Main = () =>
 {
+    //https://beven-wedding-fx-fsghcmcrgse2deby.westus2-01.azurewebsites.net/api/defcon
+
     return(
         <BrowserRouter>
             <Header/>
