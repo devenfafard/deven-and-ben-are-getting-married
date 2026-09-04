@@ -72,3 +72,17 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+.header-right button
+{
+    height: 60%;
+}
+
+.loginButton
+{
+    background-color: darkslategray;
+    border-radius: 5px;
+    border-color: black;
+    padding: 1%;
+    margin: 1%;
+}

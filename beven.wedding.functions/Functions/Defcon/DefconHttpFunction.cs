@@ -18,7 +18,7 @@ public class DefconHttpFunction(ILogger<DefconHttpFunction> logger,
 {
     [Function(nameof(DefconHttpFunction))]
     public async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, WebRequestMethods.Http.Get, Route = nameof(Defcon))]
+        [HttpTrigger(AuthorizationLevel.Anonymous, WebRequestMethods.Http.Post, Route = nameof(Defcon))]
         HttpRequestData request)
     {
         using var memoryStream = new MemoryStream();
@@ -43,8 +43,8 @@ public class DefconHttpFunction(ILogger<DefconHttpFunction> logger,
             return BadRequestResponse(validationResult.Errors.Select(static e => e.ErrorMessage));
         }
 
-        var result = repository.GetPeopleInGroupAsync(deserializedSafeguardDto.Data);
+        var result = await repository.GetPeopleInGroupAsync(deserializedSafeguardDto.Data);
         
-        return OkResponse(result);
+        return  new JsonResult(result);
     }
 }

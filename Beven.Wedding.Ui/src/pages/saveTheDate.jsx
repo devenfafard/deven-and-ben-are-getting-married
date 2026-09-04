@@ -26,9 +26,8 @@ const SaveTheDate = () =>
             <div className="saveTheDate-container">
                 <Wave/>
                 <div className="saveTheDate-locationPanel">
-                    <p><h2>Location</h2></p>
-                    <p><h5>The Zenda Estate</h5></p>
-
+                    <h2>Location</h2>
+                    <p>The Zenda Estate</p>
                 </div>
             </div>
         </div>

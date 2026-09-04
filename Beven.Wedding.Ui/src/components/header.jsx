@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 
 import './header.css';
 
-const Header = () =>
+const Header = ({partyLevel, onLogin}) =>
 {
     const [scrollPercentage, setScrollPercentage] = useState(0);
 
@@ -28,7 +28,7 @@ const Header = () =>
 
     },[])
 
-    var headerClassName = "header";
+    var headerClassName = "";
     if (scrollPercentage > 30)
     {
          headerClassName = " header-floating";
@@ -40,6 +40,16 @@ const Header = () =>
 
     const navigate = useNavigate();
 
+    function LoginInfo(level)
+    {
+        if(level > 0)
+        {
+            return null;
+        }
+
+        return(<button className="loginButton" onClick={onLogin}>Login</button>);
+    }
+
     return (
         <div className={headerClassName}>
             <div className="header-left">
@@ -49,8 +59,11 @@ const Header = () =>
             </div>
 
             <div className="header-right">
+                {LoginInfo(partyLevel)}
+                <h2>|</h2>
                 <button onClick={() => { navigate("/")}}>Home</button>
                 <button onClick={() => { navigate("/gallery")}}>Gallery</button>
+                <button onClick={() => { navigate("/save-the-date")}}>Save the Date</button>
             </div>
         </div>
     )
