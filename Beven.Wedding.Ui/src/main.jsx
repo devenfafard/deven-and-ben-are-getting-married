@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import './index.css';
 
@@ -10,99 +10,71 @@ import Footer from './components/footer.jsx';
 import Home from "./pages/home.jsx";
 import Gallery from "./pages/gallery.jsx";
 import SaveTheDate from "./pages/saveTheDate.jsx";
+import LoginPopUp from "./components/loginPopUp.jsx";
 
 const Main = () =>
 {
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const response = await fetch("https://beven-wedding-fx-fsghcmcrgse2deby.westus2-01.azurewebsites.net/api/defcon",
-    //             {
-    //                 method: "POST",
-    //                 mode: "no-cors",
-    //                 headers:
-    //                     {
-    //                         'Content-Type': "application/json",
-    //                         Accept: "application/json",
-    //                     },
-    //                 body: JSON.stringify({Data:"am"})
-    //             }).then()
-    //             return await response.text();
-    //     }
-    //     const xxx = fetchData();
-    //     console.log(xxx);
-    // }, []);
-
-    async function eatmyballsAsync()
+    const [partyInfo, setPartyInfo] = useState({
+        firstName: "",
+        lastName: "",
+        defconLevel: 0,
+    });
+    function SetPartyData(data)
     {
-        const fuckingshit = new Request(
+        setLoginPopUp(false);
+        setPartyInfo({
+            firstName: data["FirstName"],
+            lastName: data["LastName"],
+            defconLevel: data["DefconLevel"],
+        });
+        console.log("Party info set");
+    }
+    async function onSubmit(passcode = "")
+    {
+        const req = new Request(
             "https://beven-wedding-fx-fsghcmcrgse2deby.westus2-01.azurewebsites.net/api/defcon",
             {
                     method: "POST",
                     "Content-Type": "application/json",
-                    body: JSON.stringify({Data:"am"}),
+                    accept: "application/json",
+                    body: JSON.stringify({Data: passcode}),
                 }
-            )
+        );
 
         try
         {
-            // DA JUICE
-            await fetch(fuckingshit)
-                .then(response =>
+            await fetch(req).then(response =>
+            {
+                if(response.ok)
                 {
-                    if(response.ok)
+                    console.log("Data fetched successfully!");
+                    return response.json().then(data =>
                     {
-                        return response.json().then((data)=> data)
-                    }
-                    else
-                    {
-                        response.json().then(response => {throw new Error(response.error)})
-                    }
-                });
-            // END DA JUICE
+                        SetPartyData(data["Value"]["Data"]["Result"][0]);
+                    });
+                }
+                else
+                {
+                    throw new Error(response.statusText);
+                }
+            });
         }
         catch(e)
         {
-            console.log("this shit fucking syucs " + e)
+            console.log("Error fetching data: " + e)
         }
-
     }
-    useEffect(() =>
-        {
-            const balls = async () => await eatmyballsAsync()
 
-
-            // const fuckyou = await fetch("https://beven-wedding-fx-fsghcmcrgse2deby.westus2-01.azurewebsites.net/api/defcon",
-            //     {
-            //         method: "POST",
-            //         mode: "no-cors",
-            //         headers:
-            //             {
-            //                 "Content-Type": "application/json",
-            //                 Accept: "application/json",
-            //             },
-            //         body: JSON.stringify({Data:"am"})
-            //     })
-                // .then(response => response.json()
-                //     .then(data =>
-                //         (
-                //             {
-                //                 data: data,
-                //                 status: response.status,
-                //             }
-                //         )
-                //     )
-                //     .then(result => {console.log(result)}))
-        }, [])
-
-    const [partyLevel, setPartyLevel] = useState(0);
+    const [showLoginPopUp, setLoginPopUp] = useState(false);
 
     return(
         <BrowserRouter>
-            <Header partyLevel={partyLevel} onLogin={() => setPartyLevel(1)} />
+            <LoginPopUp showPopup={showLoginPopUp} closePopup={()=>setLoginPopUp(false)} onSubmit={async ()=>{await onSubmit("am")}}/>
+            <Header partyInfo={partyInfo} onLogin={() => setLoginPopUp(true)} />
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/gallery" element={<Gallery/>}/>
-                <Route path="/save-the-date" element={<SaveTheDate/>}/>
+                <Route path="/save-the-date" element={partyInfo.defconLevel > 0 && <SaveTheDate/>}/>
             </Routes>
             <Footer/>
         </BrowserRouter>

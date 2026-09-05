@@ -14,8 +14,8 @@
     width: 100%;
     height: 10%;
 
+    background-color: #e9dfdd;
     display: flex;
-    background-color: white;
     box-shadow: 0 1px 70px rgba(0, 0, 0, 0.5);
     transition: all .5s ease;
 }
@@ -80,7 +80,7 @@
 
 .loginButton
 {
-    background-color: darkslategray;
+    background-color: #CDB084;;
     border-radius: 5px;
     border-color: black;
     padding: 1%;

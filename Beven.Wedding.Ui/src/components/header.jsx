@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 
 import './header.css';
 
-const Header = ({partyLevel, onLogin}) =>
+const Header = ({partyInfo = { firstName: "", lastName: "", defconLevel: 0}, onLogin}) =>
 {
     const [scrollPercentage, setScrollPercentage] = useState(0);
 
@@ -25,7 +25,6 @@ const Header = ({partyLevel, onLogin}) =>
         return()=>{
             window.removeEventListener("scroll", handleScroll)
         }
-
     },[])
 
     var headerClassName = "";
@@ -40,16 +39,6 @@ const Header = ({partyLevel, onLogin}) =>
 
     const navigate = useNavigate();
 
-    function LoginInfo(level)
-    {
-        if(level > 0)
-        {
-            return null;
-        }
-
-        return(<button className="loginButton" onClick={onLogin}>Login</button>);
-    }
-
     return (
         <div className={headerClassName}>
             <div className="header-left">
@@ -59,11 +48,12 @@ const Header = ({partyLevel, onLogin}) =>
             </div>
 
             <div className="header-right">
-                {LoginInfo(partyLevel)}
+                {partyInfo.defconLevel < 1 && <button className="loginButton" onClick={onLogin}>Login</button>}
+                {partyInfo.defconLevel > 0 && <p>{partyInfo.lastName}</p>}
                 <h2>|</h2>
                 <button onClick={() => { navigate("/")}}>Home</button>
                 <button onClick={() => { navigate("/gallery")}}>Gallery</button>
-                <button onClick={() => { navigate("/save-the-date")}}>Save the Date</button>
+                {partyInfo.defconLevel > 0 && <button onClick={() => { navigate("/save-the-date")}}>Save the Date</button>}
             </div>
         </div>
     )

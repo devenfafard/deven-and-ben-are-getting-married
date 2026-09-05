@@ -1,0 +1,62 @@
+.loginPopUp
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    z-index: 2;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(15,15,15,0.6);
+}
+
+.closeButton
+{
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+}
+
+.loginContainer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    height: 40%;
+    width: auto;
+    border-radius: 30px;
+    border: 1vh solid;
+    aspect-ratio: 1;
+
+    background-color: var(--tan);
+}
+
+.loginContainer h2
+{
+    width: 100%;
+    height: auto;
+    font-family: "Momo Trust Display", sans-serif;
+    color: var(--pure-white);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.loginContainer input
+{
+    width: 100%;
+    margin: 0 10%;
+    height: auto;
+}
+
+.loginContainer button
+{
+    width: 40%;
+    height: auto;
+    background-color: var(--pure-white);
+    color: var(--pure-white);
+}

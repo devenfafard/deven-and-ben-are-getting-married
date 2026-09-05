@@ -1,5 +1,5 @@
 :root {
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat, "Agbalumo", "Alata", "Momo Trust Display", sans-serif;
 
   width: 100%;
   height: 100%;
@@ -8,10 +8,14 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
   text-align: center;
   letter-spacing: 0.5px;
+
+  --buttdust: #062213;
+  --light-green: #3d472f;
+  --pure-white: #e9dfdd;
+  --tan: #CDB084;
 }
 
 h1
@@ -37,7 +41,7 @@ p
 
 body
 {
-  font-family: "Alata", sans-serif;
+  font-family:  sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -66,27 +70,7 @@ button
   font-family: "Alata", sans-serif;
 }
 
-.agbalumo-regular {
-  font-family: "Agbalumo", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.alata-regular
-{
-  font-family: "Alata", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.2;
-}
-
-.momo-trust-display-regular {
-  font-family: "Momo Trust Display", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-@media screen and (max-width: 800px)
+@media screen and (max-width: 800px) /*mobile section*/
 {
   h1
   {
@@ -102,12 +86,5 @@ button
   li
   {
     font-size: large;
-  }
-
-  :root {
-    --dark-green: #062213;
-    --light-green: #3d472f;
-    --pure-white: #e9dfdd;
-    --tan: #CDB08;
   }
 }
