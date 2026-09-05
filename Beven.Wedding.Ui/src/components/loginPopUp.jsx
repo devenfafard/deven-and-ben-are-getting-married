@@ -1,6 +1,7 @@
 import "./loginPopUp.css";
+import React from "react";
 
-const LoginPopUp = ({showPopup, closePopup, onSubmit}) =>
+const LoginPopUp = ({showPopup, closePopup}) =>
 {
     if(!showPopup) {return null}
     return (
@@ -8,8 +9,8 @@ const LoginPopUp = ({showPopup, closePopup, onSubmit}) =>
             <button className="closeButton" onClick={closePopup}/>
             <div className="loginContainer">
                 <label>
-                    beeblebobble<input/>
-                    <button onClick={onSubmit}>Submit</button>
+                    passcode: <input id="passcode" type="text"/>
+                    <button type={"submit"}>Submit</button>
                 </label>
             </div>
         </div>

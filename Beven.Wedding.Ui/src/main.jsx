@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './index.css';
 
@@ -29,7 +29,17 @@ const Main = () =>
         });
         console.log("Party info set");
     }
-    async function onSubmit(passcode = "")
+    const [passcode, setPasscode] = useState("am");
+    async function SetPasscode(event)
+    {
+        event.preventDefault();
+        const passcode = event.currentTarget.elements.passcode.value;
+        console.log("Passcode set: " + passcode);
+        setPasscode(passcode);
+        setLoginPopUp(false);
+        await onSubmit();
+    }
+    async function onSubmit()
     {
         const req = new Request(
             "https://beven-wedding-fx-fsghcmcrgse2deby.westus2-01.azurewebsites.net/api/defcon",
@@ -69,7 +79,9 @@ const Main = () =>
 
     return(
         <BrowserRouter>
-            <LoginPopUp showPopup={showLoginPopUp} closePopup={()=>setLoginPopUp(false)} onSubmit={async ()=>{await onSubmit("am")}}/>
+            <form id="passcode" onSubmit={SetPasscode}>
+                <LoginPopUp showPopup={showLoginPopUp} closePopup={() => setLoginPopUp(false)} />
+            </form>
             <Header partyInfo={partyInfo} onLogin={() => setLoginPopUp(true)} />
             <Routes>
                 <Route path="/" element={<Home/>}/>
