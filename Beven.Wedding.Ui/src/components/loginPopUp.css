@@ -28,11 +28,11 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    height: 40%;
+    height: 30%;
     width: auto;
     border-radius: 30px;
     border: 1vh solid;
-    aspect-ratio: 1;
+    aspect-ratio: 2/1;
 
     background-color: var(--tan);
 }

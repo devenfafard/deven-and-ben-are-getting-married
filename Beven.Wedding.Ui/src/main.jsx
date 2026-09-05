@@ -29,17 +29,14 @@ const Main = () =>
         });
         console.log("Party info set");
     }
-    const [passcode, setPasscode] = useState("am");
-    async function SetPasscode(event)
+    async function SetCode(event)
     {
         event.preventDefault();
-        const passcode = event.currentTarget.elements.passcode.value;
-        console.log("Passcode set: " + passcode);
-        setPasscode(passcode);
+        const val = event.currentTarget.elements.code.value.toString();
         setLoginPopUp(false);
-        await onSubmit();
+        await onSubmit(val);
     }
-    async function onSubmit()
+    async function onSubmit(code)
     {
         const req = new Request(
             "https://beven-wedding-fx-fsghcmcrgse2deby.westus2-01.azurewebsites.net/api/defcon",
@@ -47,7 +44,7 @@ const Main = () =>
                     method: "POST",
                     "Content-Type": "application/json",
                     accept: "application/json",
-                    body: JSON.stringify({Data: passcode}),
+                    body: JSON.stringify({Data: code}),
                 }
         );
 
@@ -57,9 +54,9 @@ const Main = () =>
             {
                 if(response.ok)
                 {
-                    console.log("Data fetched successfully!");
                     return response.json().then(data =>
                     {
+                        console.log("Data fetched successfully!");
                         SetPartyData(data["Value"]["Data"]["Result"][0]);
                     });
                 }
@@ -79,7 +76,7 @@ const Main = () =>
 
     return(
         <BrowserRouter>
-            <form id="passcode" onSubmit={SetPasscode}>
+            <form id="code" onSubmit={SetCode}>
                 <LoginPopUp showPopup={showLoginPopUp} closePopup={() => setLoginPopUp(false)} />
             </form>
             <Header partyInfo={partyInfo} onLogin={() => setLoginPopUp(true)} />

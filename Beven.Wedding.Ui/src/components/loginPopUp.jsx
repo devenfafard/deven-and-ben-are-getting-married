@@ -8,10 +8,9 @@ const LoginPopUp = ({showPopup, closePopup}) =>
         <div className="loginPopUp">
             <button className="closeButton" onClick={closePopup}/>
             <div className="loginContainer">
-                <label>
-                    passcode: <input id="passcode" type="text"/>
-                    <button type={"submit"}>Submit</button>
-                </label>
+                <h2>Enter passcode</h2>
+                <input id="code" type="text"/>
+                <button type={"submit"}>Submit</button>
             </div>
         </div>
     )
