@@ -3,7 +3,7 @@ import React from "react";
 import './home.css';
 import InfoCard from "../components/infoCard.jsx";
 
-const Home = () =>
+const Home = ({partyInfo, setLoginPopup}) =>
 {
     return (
         <div className="home">
@@ -12,8 +12,8 @@ const Home = () =>
             </div>
 
             <div className="home-content">
-                    <InfoCard showWave={true} mirrorWave={true} color={'#e9dfdd'} title={"Heck yeah we are!"} body={"This site is a hub with information on all of our wedding related festivities. Check back frequently for updates as we get closer to the big day! "}/>
-                    <InfoCard securityLevelNeeded={1} showWave={false} mirrorWave={false} color={'#3d472f'} title={"Engagement Party!"} body={"its gonna be like a dragon or somethins"}/>
+                <InfoCard mirrorWave={true} infoData={{ color : "#e9dfdd", title : "Heck yeah we are!" , body : "This site is a hub with information on all of our wedding related festivities. Check back frequently for updates as we get closer to the big day!"}} />
+                {partyInfo.defconLevel < 1 && <InfoCard infoData={{ color : "#3d472f", title : "Login to see more", body : "Click below to enter your passcode"}} content={<button className={"infoButton"} onClick={setLoginPopup(true)}>Login</button>}/>}
             </div>
         </div>
     )

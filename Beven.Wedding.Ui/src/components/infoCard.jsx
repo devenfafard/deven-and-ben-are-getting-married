@@ -3,34 +3,21 @@ import React from "react";
 import './infoCard.css';
 import Wave from '../components/wave.jsx';
 
-const infoCard = ({color = "Transparent", title = "", body = "",showBox = false, showWave = false, mirrorWave = false, securityLevelNeeded = 0}) =>
+const infoCard = ({infoData = { color : "Transparent", title : "", body: ""}, content, showWave = true, mirrorWave = false}) =>
 {
     let wave = '';
-    if(showWave)
-    {
+    if(showWave) {
         wave = <Wave/>;
 
-        if(mirrorWave)
-        {
+        if (mirrorWave) {
             wave = <Wave isMirror={true}/>;
         }
     }
 
-    let textBox = '';
-
-    if(showBox)
-    {
-        textBox = <div className="info-card-box"><h2>{title}</h2><p>{body}</p></div>
-    }
-    else
-    {
-        textBox = <div className="info-card-content"><h2>{title}</h2><p>{body}</p></div>;
-    }
-
     return (
-        <div className="info-card" style={{backgroundColor: color, fill: color}}>
+        <div className="info-card" style={{backgroundColor: infoData.color, fill: infoData.color}}>
             {wave}
-            {textBox}
+            <div className="info-card-content"><h2>{infoData.title}</h2><p>{infoData.body}</p>{content}</div>
         </div>
     )
 }

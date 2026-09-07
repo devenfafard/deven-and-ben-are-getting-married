@@ -71,6 +71,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    text-align: center;
 }
 
 .header-right button
@@ -80,9 +81,15 @@
 
 .loginButton
 {
+    height: 60%;
     background-color: #CDB084;;
     border-radius: 5px;
     border-color: black;
     padding: 1%;
     margin: 1%;
+}
+
+.header-right p
+{
+    margin: 0;
 }

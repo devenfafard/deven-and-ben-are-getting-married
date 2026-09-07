@@ -28,7 +28,7 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    height: 30%;
+    height: 35%;
     width: auto;
     border-radius: 30px;
     border: 1vh solid;
@@ -53,10 +53,27 @@
     height: auto;
 }
 
+.loginContainer input:invalid
+{
+    border: red solid 3px;
+}
+
 .loginContainer button
 {
     width: 40%;
     height: auto;
     background-color: var(--pure-white);
     color: var(--pure-white);
+}
+
+.loginContainer p
+{
+    margin: 0;
+}
+
+.errorText
+{
+    width: 100%;
+    color: red;
+    margin: 0;
 }

@@ -12,6 +12,7 @@ import Gallery from "./pages/gallery.jsx";
 import SaveTheDate from "./pages/saveTheDate.jsx";
 import LoginPopUp from "./components/loginPopUp.jsx";
 
+
 const Main = () =>
 {
     const [partyInfo, setPartyInfo] = useState({
@@ -21,20 +22,12 @@ const Main = () =>
     });
     function SetPartyData(data)
     {
-        setLoginPopUp(false);
         setPartyInfo({
             firstName: data["FirstName"],
             lastName: data["LastName"],
             defconLevel: data["DefconLevel"],
         });
         console.log("Party info set");
-    }
-    async function SetCode(event)
-    {
-        event.preventDefault();
-        const val = event.currentTarget.elements.code.value.toString();
-        setLoginPopUp(false);
-        await onSubmit(val);
     }
     async function onSubmit(code)
     {
@@ -56,8 +49,17 @@ const Main = () =>
                 {
                     return response.json().then(data =>
                     {
-                        console.log("Data fetched successfully!");
-                        SetPartyData(data["Value"]["Data"]["Result"][0]);
+                        if(data["Value"] === null || data["Value"]["Data"]["Result"].length < 1)
+                        {
+                            console.log(data["Value"]["Data"]["Result"]);
+                            setLoginError(true);
+                        }
+                        else
+                        {
+                            console.log("Data fetched successfully!");
+                            SetPartyData(data["Value"]["Data"]["Result"][0]);
+                            setLoginPopup(false);
+                        }
                     });
                 }
                 else
@@ -72,16 +74,16 @@ const Main = () =>
         }
     }
 
-    const [showLoginPopUp, setLoginPopUp] = useState(false);
+
+    const [showLoginPopup, setLoginPopup] = useState(false);
+    const [showLoginError, setLoginError] = useState(false);
 
     return(
         <BrowserRouter>
-            <form id="code" onSubmit={SetCode}>
-                <LoginPopUp showPopup={showLoginPopUp} closePopup={() => setLoginPopUp(false)} />
-            </form>
-            <Header partyInfo={partyInfo} onLogin={() => setLoginPopUp(true)} />
+            <LoginPopUp showPopup={showLoginPopup} setPopup={setLoginPopup} onSubmit={onSubmit} showErr={showLoginError} />
+            <Header partyInfo={partyInfo} setLoginPopup={() => setLoginPopup} />
             <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route path="/" element={<Home partyInfo={partyInfo} setLoginPopup={() => setLoginPopup} />}/>
                 <Route path="/gallery" element={<Gallery/>}/>
                 <Route path="/save-the-date" element={partyInfo.defconLevel > 0 && <SaveTheDate/>}/>
             </Routes>

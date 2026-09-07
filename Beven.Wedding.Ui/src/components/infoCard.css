@@ -42,3 +42,13 @@
     font-family: Alata, Sans-serif, serif;
     font-size: 28px;
 }
+
+.infoButton
+{
+    background-color: #CDB084;;
+    border-radius: 5px;
+    border-color: black;
+    padding: 1%;
+    margin: 1%;
+    color: white;
+}
