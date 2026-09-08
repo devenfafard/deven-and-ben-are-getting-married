@@ -7,8 +7,6 @@
 
     padding: 0;
     margin: 1%;
-
-
 }
 
 .imageButton button
@@ -29,8 +27,6 @@
     height: auto;
 
     border-radius: 10px;
-
-    object-fit: cover;
 }
 
 .imageButton img:hover

@@ -12,7 +12,6 @@ import Gallery from "./pages/gallery.jsx";
 import SaveTheDate from "./pages/saveTheDate.jsx";
 import LoginPopUp from "./components/loginPopUp.jsx";
 
-
 const Main = () =>
 {
     const [partyInfo, setPartyInfo] = useState({
@@ -77,13 +76,22 @@ const Main = () =>
 
     const [showLoginPopup, setLoginPopup] = useState(false);
     const [showLoginError, setLoginError] = useState(false);
+    function SetLoginPopup(val)
+    {
+        setLoginPopup(val);
+
+        if(!val)
+        {
+            setLoginError(false);
+        }
+    }
 
     return(
         <BrowserRouter>
-            <LoginPopUp showPopup={showLoginPopup} setPopup={setLoginPopup} onSubmit={onSubmit} showErr={showLoginError} />
-            <Header partyInfo={partyInfo} setLoginPopup={() => setLoginPopup} />
+            <LoginPopUp showPopup={showLoginPopup} setPopup={SetLoginPopup} onSubmit={onSubmit} showErr={showLoginError} />
+            <Header partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} />
             <Routes>
-                <Route path="/" element={<Home partyInfo={partyInfo} setLoginPopup={() => setLoginPopup} />}/>
+                <Route path="/" element={<Home partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} />}/>
                 <Route path="/gallery" element={<Gallery/>}/>
                 <Route path="/save-the-date" element={partyInfo.defconLevel > 0 && <SaveTheDate/>}/>
             </Routes>
