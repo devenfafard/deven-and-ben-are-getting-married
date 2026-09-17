@@ -7,9 +7,9 @@ public enum DefconLevel
 {
     Unknown = 0,
     
-    FleaBottom,     // least restrictive
+    FleaBottom,     // most restrictive
     Sept,
     SmallFolk,
     Court,
-    SmallCouncil    // Most restrictive
+    SmallCouncil    // least restrictive
 }

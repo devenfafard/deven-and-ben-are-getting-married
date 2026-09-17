@@ -2,7 +2,14 @@
 {
     width: 100%;
     height: auto;
-    background-color: var(--pure-white);
+}
+
+.saveTheDate-landing
+{
+    background-position-x: center;
+    background-position-y: top;
+    background-size: cover;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0) 50%), url("src/assets/zenda-front.png") no-repeat fixed;
 }
 
 .saveTheDate-top
@@ -14,15 +21,15 @@
     padding-top: 10%;
     padding-left: 15%;
     height: 15vh;
+}
 
-    background-color: #062213;
-    fill: #062213;
-
-    font-family: "Agbalumo", system-ui;
+.saveTheDate-top h3
+{
+    font-family: "Alata", system-ui;
     font-weight: 600;
     font-style: normal;
-    font-size: 64px;
-    color: #CDB084;
+    font-size: 48px;
+    color: var(--tan);
 }
 
 .saveTheDate-middle
@@ -33,9 +40,23 @@
 
     padding-top: 10%;
     height: 15vh;
+}
 
-    background-color: #062213;
-    fill: #062213;
+.saveTheDate-middle h1
+{
+    font-family: var(--fancy), system-ui;
+    font-size: 64px;
+    color: var(--tan);
+}
+
+.saveTheDate-middle h4
+{
+    font-family: var(--fancy), system-ui;
+    font-size: 36px;
+    color: var(--tan);
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 .saveTheDate-bottom
@@ -48,9 +69,15 @@
     padding-bottom: 10%;
     padding-right: 15%;
     height: 15vh;
+}
 
-    background-color: #062213;
-    fill: #062213;
+.saveTheDate-bottom h3
+{
+    font-family: "Alata", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 48px;
+    color: var(--tan)
 }
 
 .saveTheDate-content-section
@@ -65,22 +92,23 @@
     width: 100%;
     height: 80%;
 
-    padding-bottom: 5%;
+    padding-bottom: 2%;
+}
+.saveTheDate-content-section h2
+{
+    font-family: var(--fancy), system-ui;
+    color: var(--light-green);
+    font-size: 48px;
 }
 
-.saveTheDate-container
+.saveTheDate-locationContainer
 {
-    background-color: #CDB084;
-    fill: #CDB084;
-
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: center;
 
     height: auto;
-
-    padding-bottom: 5%;
 }
 
 .saveTheDate-container h1
@@ -92,78 +120,8 @@
     color: #3d472f !important;
 }
 
-.saveTheDate h1
-{
-    font-family: "Agbalumo", system-ui;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 64px;
-    color: #CDB084;
-}
-
-.saveTheDate h2
-{
-    font-family: "Agbalumo", system-ui;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 42px;
-    color: #3d472f !important;
-}
-
-.saveTheDate h3
-{
-    font-family: "Alata", system-ui;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 48px;
-    color: #CDB084;
-}
-
-.saveTheDate h4
-{
-    font-family: "Alata", system-ui;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 36px;
-    color: #CDB084;
-    vertical-align: center;
-    padding-top: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
-}
-
-.saveTheDate h6
-{
-    font-family: "Agbalumo", system-ui;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 34px;
-    color: #3d472f !important;
-    line-height: 1.5;
-}
-
-.saveTheDate-leftInfoBox
-{
-    width: 50%;
-    padding-left: 2%;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.saveTheDate-rightInfoBox
-{
-    width: 50%;
-    padding-right: 2%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 .saveTheDate-locationPanel
 {
-    background-color: #CDB084;
-    fill: #CDB084;
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -171,9 +129,35 @@
     height: auto;
 
     padding-bottom: 5%;
+
+    font-family: var(--notfancy), system-ui;
+    font-size: 40px;
 }
 
 .saveTheDate-locationPanel h2
 {
     width: 100%;
+    font-family: var(--fancy), system-ui;
+    color: var(--light-green);
+    font-size: 48px;
+}
+
+.saveTheDate-locationPanel h3
+{
+    width: 100%;
+    font-family: var(--notfancy), system-ui;
+    font-size: 36px;
+}
+
+.saveTheDate-faqContainer
+{
+    background-color: #CDB084;
+    fill: #CDB084;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+
+    height: auto;
 }

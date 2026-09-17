@@ -10,22 +10,23 @@ import Footer from './components/footer.jsx';
 import Home from "./pages/home.jsx";
 import Gallery from "./pages/gallery.jsx";
 import SaveTheDate from "./pages/saveTheDate.jsx";
+import Faq from "./pages/faq.jsx";
 import LoginPopUp from "./components/loginPopUp.jsx";
 
 const Main = () =>
 {
     const [partyInfo, setPartyInfo] = useState({
-        firstName: "",
-        lastName: "",
         defconLevel: 0,
+        safeDisplayName: ""
     });
     function SetPartyData(data)
     {
+        console.log(data.map(p => p.FirstName).join(" & "))
         setPartyInfo({
-            firstName: data["FirstName"],
-            lastName: data["LastName"],
-            defconLevel: data["DefconLevel"],
+            safeDisplayName: data.map(p => p.FirstName).join(" & "),
+            defconLevel: data[0]["DefconLevel"], //TODO - update shape of backup
         });
+
         console.log("Party info set");
     }
     async function onSubmit(code)
@@ -56,7 +57,7 @@ const Main = () =>
                         else
                         {
                             console.log("Data fetched successfully!");
-                            SetPartyData(data["Value"]["Data"]["Result"][0]);
+                            SetPartyData(data["Value"]["Data"]["Result"]);
                             setLoginPopup(false);
                         }
                     });
@@ -94,6 +95,7 @@ const Main = () =>
                 <Route path="/" element={<Home partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} />}/>
                 <Route path="/gallery" element={<Gallery/>}/>
                 <Route path="/save-the-date" element={partyInfo.defconLevel > 0 && <SaveTheDate/>}/>
+                <Route path="/faq" element={<Faq partyInfo={partyInfo}/>}/>
             </Routes>
             <Footer/>
         </BrowserRouter>

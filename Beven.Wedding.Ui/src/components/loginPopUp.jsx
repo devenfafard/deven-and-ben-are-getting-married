@@ -24,8 +24,7 @@ const LoginPopUp = ({showPopup, setPopup, showErr, onSubmit}) =>
             <button className="closeBackground" onClick={ResetPopup}/>
             <div className="loginContainer">
                 <div className={"closeLogin"}><ImageButton image={"../src/assets/ui/Close-button.png"} onClick={ResetPopup}/></div>
-                <h2>Enter passcode</h2>
-                <p>Enter letters only.</p>
+                <h2>Enter your passcode</h2>
                 {showErr && <p className={"errorText"}>Invalid passcode. Try again</p>}
                 <input id="code" type="text" maxLength={20} value={code} onInput={event => OnInputChange(event.target.value)} autoFocus={true}/>
                 <button className={"submitButton"} onClick={async () => {onSubmit(code)}}>Submit</button>

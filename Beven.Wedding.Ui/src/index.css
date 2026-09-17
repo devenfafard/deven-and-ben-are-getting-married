@@ -16,6 +16,13 @@
   --light-green: #3d472f;
   --pure-white: #e9dfdd;
   --tan: #CDB084;
+  --red: #390d0c;
+  --light-red: #662e21;
+  --black: #23221D;
+
+  --fancy: "Agbalumo", system-ui;
+  --notfancy: "Alata", system-ui;
+  --header: "Momo Trust Display", system-ui;
 }
 
 h1
@@ -66,7 +73,6 @@ button
 {
   border-color: transparent;
   background-color: transparent;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   font-family: "Alata", sans-serif;
 }
 

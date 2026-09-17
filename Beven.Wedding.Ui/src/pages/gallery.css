@@ -3,7 +3,7 @@
     width: 100%;
     height: auto;
 
-    background-color: #e9dfdd;
+    background-color: var(--pure-white)
 }
 
 .gallery-top
@@ -14,12 +14,14 @@
 
     padding-top: 5%;
     height: 25vh;
+
+    font-family: var(--header), system-ui;
 }
 
 .gallery-wall
 {
-    background-color: #CDB084;
-    fill: #CDB084;
+    background-color: var(--light-green);
+    fill: var(--light-green);
 
     display: flex;
     flex-wrap: wrap;
@@ -28,7 +30,7 @@
 
     height: auto;
 
-    padding-bottom: 5%;
+    padding-bottom: 8%;
 }
 
 .gallery-container

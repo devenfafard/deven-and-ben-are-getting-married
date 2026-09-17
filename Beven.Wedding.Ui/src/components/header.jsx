@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 
 import './header.css';
 
-const Header = ({partyInfo = { firstName: "", lastName: "", defconLevel: 0}, setLoginPopup}) =>
+const Header = ({partyInfo = { safeDisplayName: "", defconLevel: 0}, setLoginPopup}) =>
 {
     const [scrollPercentage, setScrollPercentage] = useState(0);
 
@@ -17,7 +17,6 @@ const Header = ({partyInfo = { firstName: "", lastName: "", defconLevel: 0}, set
             const scrollPercent = (scrollY / (documentHeight - windowHeight))*100
 
             setScrollPercentage(scrollPercent)
-            // console.log(scrollPercent)
         }
 
         window.addEventListener("scroll", handleScroll);
@@ -49,8 +48,8 @@ const Header = ({partyInfo = { firstName: "", lastName: "", defconLevel: 0}, set
 
             <div className="header-right">
                 {partyInfo.defconLevel < 1 && <button className="loginButton" onClick={setLoginPopup(true)}>Login</button>}
-                {partyInfo.defconLevel > 0 && <p>{partyInfo.lastName}</p>}
-                <h2>|</h2>
+                {partyInfo.defconLevel > 0 && <p>{partyInfo.safeDisplayName}</p>}
+                <h2> | </h2>
                 <button onClick={() => { navigate("/")}}>Home</button>
                 <button onClick={() => { navigate("/gallery")}}>Gallery</button>
                 {partyInfo.defconLevel > 0 && <button onClick={() => { navigate("/save-the-date")}}>Save the Date</button>}
