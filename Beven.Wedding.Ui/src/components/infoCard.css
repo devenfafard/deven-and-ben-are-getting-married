@@ -64,11 +64,11 @@
 
 .empty-button
 {
-    border: 5px solid var(--tan);
+    border: 5px solid var(--black);
     border-radius: 50px;
     padding: 2%;
     margin: 2% 1% 2%;
-    color: var(--tan);
-    font-family: var(--fancy), system-ui;
+    color: var(--black);
+    font-family: var(--notfancy), system-ui;
     background-color: transparent;
 }

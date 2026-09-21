@@ -11,7 +11,7 @@ const Footer = () =>
 
     return (
         <div className="footer">
-            <Wave height={45}/>
+            <Wave isMirror={true} height={45}/>
             <div className="footer-content">
                 <p>
                     Made with ❤ by Ben & Deven

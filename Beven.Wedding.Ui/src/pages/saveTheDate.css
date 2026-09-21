@@ -9,7 +9,16 @@
     background-position-x: center;
     background-position-y: top;
     background-size: cover;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0) 50%), url("src/assets/zenda-front.png") no-repeat fixed;
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ), url("src/assets/zenda-front.png") no-repeat fixed;
+
+    color: var(--pure-white);
+    font-family: var(--notfancy), system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 48px;
 }
 
 .saveTheDate-top
@@ -21,15 +30,6 @@
     padding-top: 10%;
     padding-left: 15%;
     height: 15vh;
-}
-
-.saveTheDate-top h3
-{
-    font-family: "Alata", system-ui;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 48px;
-    color: var(--tan);
 }
 
 .saveTheDate-middle
@@ -46,7 +46,7 @@
 {
     font-family: var(--fancy), system-ui;
     font-size: 64px;
-    color: var(--tan);
+    color: var(--pure-white);
 }
 
 .saveTheDate-middle h4
@@ -71,19 +71,10 @@
     height: 15vh;
 }
 
-.saveTheDate-bottom h3
-{
-    font-family: "Alata", system-ui;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 48px;
-    color: var(--tan)
-}
-
 .saveTheDate-content-section
 {
-    background-color: #e9dfdd;
-    fill: #e9dfdd;
+    background-color: var(--pure-white);
+    fill: var(--pure-white);
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -94,12 +85,6 @@
 
     padding-bottom: 2%;
 }
-.saveTheDate-content-section h2
-{
-    font-family: var(--fancy), system-ui;
-    color: var(--light-green);
-    font-size: 48px;
-}
 
 .saveTheDate-locationContainer
 {
@@ -107,17 +92,11 @@
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: center;
+    background-color: var(--tan);
+    fill: var(--tan);
+    padding-bottom: 3%;
 
     height: auto;
-}
-
-.saveTheDate-container h1
-{
-    font-family: "Agbalumo", system-ui;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 42px;
-    color: #3d472f !important;
 }
 
 .saveTheDate-locationPanel
@@ -132,13 +111,13 @@
 
     font-family: var(--notfancy), system-ui;
     font-size: 40px;
+    width: 100%;
 }
 
 .saveTheDate-locationPanel h2
 {
     width: 100%;
     font-family: var(--fancy), system-ui;
-    color: var(--light-green);
     font-size: 48px;
 }
 
@@ -149,10 +128,22 @@
     font-size: 36px;
 }
 
+.location-button
+{
+    border-radius: 50px;
+    padding: 5%;
+    margin: 5% 5% 5%;
+    justify-content: center;
+    color: var(--tan);
+    font-family: var(--notfancy), system-ui;
+    font-size: 28px;
+    background-color: var(--light-red)
+}
+
 .saveTheDate-faqContainer
 {
-    background-color: #CDB084;
-    fill: #CDB084;
+    background-color: var(--light-green);
+    fill: var(--light-green);
 
     display: flex;
     flex-wrap: wrap;
@@ -160,4 +151,48 @@
     justify-content: center;
 
     height: auto;
+    padding-bottom: 10%;
+}
+
+.saveTheDate-faqContainer-right li, a:link, a:visited
+{
+    color: var(--red);
+}
+
+.saveTheDate-faqContainer-left
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    text-align: left;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 40%;
+    padding-top: 1%;
+    font-family: var(--notfancy), system-ui;
+    font-size: 28px;
+    color: var(--black);
+}
+
+.saveTheDate-faqContainer-right
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    text-align: right;
+    width: 100%;
+    padding-left: 40%;
+    padding-right: 10%;
+    padding-top: 1%;
+    font-family: var(--notfancy), system-ui;
+    font-size: 28px;
+    color: var(--black);
+}
+
+.saveTheDate h2
+{
+    font-family: var(--fancy), system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 48px;
 }

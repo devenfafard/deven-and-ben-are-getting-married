@@ -24,7 +24,7 @@
 
 .home h2
 {
-    font-family: "Agbalumo", system-ui;
+    font-family: var(--fancy), system-ui;
     font-weight: 600;
     font-style: normal;
     font-size: 48px;

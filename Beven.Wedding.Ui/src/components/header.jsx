@@ -42,12 +42,12 @@ const Header = ({partyInfo = { safeDisplayName: "", defconLevel: 0}, setLoginPop
         <div className={headerClassName}>
             <div className="header-left">
                 <button className="header-button" onClick={() => { navigate("/")}}>
-                    <img className="header-icon" src="src/assets/Balerion.jpg" alt={null}></img>
+                    D ❤ B
                 </button>
             </div>
 
             <div className="header-right">
-                {partyInfo.defconLevel < 1 && <button className="loginButton" onClick={setLoginPopup(true)}>Login</button>}
+                {partyInfo.defconLevel < 1 && <button className="login-button" onClick={setLoginPopup(true)}>Login</button>}
                 {partyInfo.defconLevel > 0 && <p>{partyInfo.safeDisplayName}</p>}
                 <h2> | </h2>
                 <button onClick={() => { navigate("/")}}>Home</button>

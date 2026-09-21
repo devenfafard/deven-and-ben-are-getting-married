@@ -32,7 +32,7 @@ const Faq = ({partyInfo}) =>
                 {partyInfo.defconLevel > 0 &&
                     <div className="faq-content-section-group">
                     <div className="faq-content-section-question">Are you guys seriously bring your pets to your wedding?</div>
-                    <div className="faq-content-section-answer">Yes! We plan on having all of our pets with us on the big day. They will only be a part of our ceremony </div>
+                    <div className="faq-content-section-answer">Yes! We plan on having all of our pets with us on the big day.</div>
 
                     <div className="faq-content-section-question">Can I bring my pets to your wedding?</div>
                     <div className="faq-content-section-answer">Due to restrictions on the property, we are not allowed to bring any other animals to the estate.</div>

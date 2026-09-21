@@ -19,6 +19,7 @@
   --red: #390d0c;
   --light-red: #662e21;
   --black: #23221D;
+  --transparent-black: rgba(15,15,15,0.6);
 
   --fancy: "Agbalumo", system-ui;
   --notfancy: "Alata", system-ui;
@@ -75,6 +76,39 @@ button
   background-color: transparent;
   font-family: "Alata", sans-serif;
 }
+
+.loader {
+  --color-1: var(--light-green);
+  --color-2: var(--pure-white);
+  --size: 2px;
+
+  z-index: 3;
+  align-self: center;
+  justify-content: center;
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  background: var(--color-1);
+  border-radius: 50%;
+  position: fixed;
+  animation: roll 1s ease-in-out infinite alternate;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  inset: calc(5 * var(--size));
+  border-radius: 50%;
+  border: calc(5 * var(--size)) solid;
+  border-color: var(--color-2) transparent;
+}
+@keyframes roll {
+  0% {
+    transform: translateX(-150%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(360deg);
+  }
+}
+
 
 @media screen and (max-width: 800px) /*mobile section*/
 {

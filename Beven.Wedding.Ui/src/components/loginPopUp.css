@@ -10,7 +10,7 @@
     height: 100%;
     width: 100%;
 
-    background-color: rgba(15,15,15,0.6);
+    background-color: var(--transparent-black);
 }
 
 .closeBackground
@@ -28,12 +28,13 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    height: 35%;
+    height: 50%;
     width: auto;
     border-radius: 30px;
     border: 1vh solid;
     aspect-ratio: 2/1;
 
+    border-color: var(--light-green);
     background-color: var(--tan);
 }
 
@@ -71,15 +72,17 @@
 
 .loginContainer input:invalid
 {
-    border: red solid 3px;
+    border: var(--red) solid 3px;
 }
 
 .submitButton
 {
-    width: 40%;
+    border-radius: 50px;
+    padding: 2%;
+    margin: 2% 1% 2%;
+    width: 30%;
     height: auto;
-    margin: 2% 0%;
-    background-color: var(--pure-white);
+    background-color: var(--black);
     color: var(--pure-white);
 }
 
@@ -91,6 +94,27 @@
 .errorText
 {
     width: 100%;
-    color: red;
+    font-family: var(--notfancy), system-ui;
+    color: var(--red);
     margin: 0;
+}
+
+.loginContainer h4
+{
+    width: 100%;
+    font-family: var(--notfancy), system-ui;
+    color: var(--black);
+    margin: 1%;
+    font-size: 16px;
+}
+
+input[type=text]
+{
+    width: 80%;
+    padding: 2%;
+    margin: 10px 0;
+    border-radius: 50px;
+    background-color: var(--pure-white);
+    border: none;
+    font-family: var(--notfancy), system-ui;
 }
