@@ -16,7 +16,6 @@
 
     color: var(--pure-white);
     font-family: var(--notfancy), system-ui;
-    font-weight: 600;
     font-style: normal;
     font-size: 48px;
 }
@@ -45,14 +44,13 @@
 .saveTheDate-middle h1
 {
     font-family: var(--fancy), system-ui;
-    font-size: 64px;
     color: var(--pure-white);
 }
 
 .saveTheDate-middle h4
 {
     font-family: var(--fancy), system-ui;
-    font-size: 36px;
+    font-size: var(--title-size) system-ui;
     color: var(--tan);
     padding-top: 1%;
     padding-left: 1%;
@@ -82,8 +80,6 @@
 
     width: 100%;
     height: 80%;
-
-    padding-bottom: 2%;
 }
 
 .saveTheDate-locationContainer
@@ -110,34 +106,18 @@
     padding-bottom: 5%;
 
     font-family: var(--notfancy), system-ui;
-    font-size: 40px;
     width: 100%;
 }
 
 .saveTheDate-locationPanel h2
 {
     width: 100%;
-    font-family: var(--fancy), system-ui;
-    font-size: 48px;
 }
 
 .saveTheDate-locationPanel h3
 {
     width: 100%;
-    font-family: var(--notfancy), system-ui;
-    font-size: 36px;
-}
-
-.location-button
-{
-    border-radius: 50px;
-    padding: 5%;
-    margin: 5% 5% 5%;
-    justify-content: center;
-    color: var(--tan);
-    font-family: var(--notfancy), system-ui;
-    font-size: 28px;
-    background-color: var(--light-red)
+    font-size: var(--large-body-size), system-ui;
 }
 
 .saveTheDate-faqContainer
@@ -168,10 +148,7 @@
     width: 100%;
     padding-left: 10%;
     padding-right: 40%;
-    padding-top: 1%;
-    font-family: var(--notfancy), system-ui;
-    font-size: 28px;
-    color: var(--black);
+    font-size: var(--large-body-size), system-ui;
 }
 
 .saveTheDate-faqContainer-right
@@ -183,16 +160,15 @@
     width: 100%;
     padding-left: 40%;
     padding-right: 10%;
-    padding-top: 1%;
-    font-family: var(--notfancy), system-ui;
-    font-size: 28px;
-    color: var(--black);
+    font-size: var(--large-body-size), system-ui;
 }
 
 .saveTheDate h2
 {
     font-family: var(--fancy), system-ui;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 48px;
+}
+
+.saveTheDate body
+{
+    font-size: var(--large-body-size), system-ui;
 }

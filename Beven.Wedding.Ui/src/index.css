@@ -21,60 +21,70 @@
   --black: #23221D;
   --transparent-black: rgba(15,15,15,0.6);
 
-  --fancy: "Agbalumo", system-ui;
-  --notfancy: "Alata", system-ui;
-  --header: "Momo Trust Display", system-ui;
+  --fancy: "Agbalumo";
+  --notfancy: "Alata";
+  --header: "Momo Trust Display";
+
+  --thicc: "800";
+
+  --header-size: 70px;
+  --title-size: 48px;
+  --large-body-size: 40px;
+  --smoll-size: 28px;
+  --smollest-size: 20px;
 }
 
 h1
 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  color: #23221D;
-  font-weight: 800;
+  color: var(--black);
+  font-family: var(--header), system-ui;
+  font-weight: var(--thicc);
+  font-size: var(--header-size);
 }
 
 h2
 {
-  color: #23221D;
-  font-weight: 700;
-  font-size: 2rem;
+  color: var(--black);
+  font-family: var(--fancy), system-ui;
+  font-size: var(--title-size);
+  padding-bottom: 1%;
 }
 
 p
 {
-  color: #23221D;
+  color: var(--black);
   line-height: normal;
 }
 
 body
 {
-  font-family:  sans-serif;
-  font-weight: 400;
+  font-family: var(--notfancy), system-ui;
   font-style: normal;
+  font-size: var(--smoll-size);
 }
 
 li
 {
-  color: #340807;
-  font-size: x-large;
+  color: var(--light-red);
 }
 
 a:link
 {
-  color: #612b1f;
+  color: var(--light-red);
 }
 
 a:visited
 {
-  color: #612b1f;
+  color: var(--light-red);
 }
 
 button
 {
   border-color: transparent;
   background-color: transparent;
-  font-family: "Alata", sans-serif;
+  font-family: var(--notfancy), system-ui;
+  font-size: var(--smoll-size);
+  align-self: center;
 }
 
 .loader {
@@ -92,6 +102,7 @@ button
   position: fixed;
   animation: roll 1s ease-in-out infinite alternate;
 }
+
 .loader:after {
   content: '';
   position: absolute;
@@ -100,6 +111,7 @@ button
   border: calc(5 * var(--size)) solid;
   border-color: var(--color-2) transparent;
 }
+
 @keyframes roll {
   0% {
     transform: translateX(-150%) rotate(0deg);

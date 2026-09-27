@@ -14,21 +14,6 @@
     justify-content: center;
 }
 
-.home h1
-{
-    font-family: "Momo Trust Display", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 70px;
-}
-
-.home h2
-{
-    font-family: var(--fancy), system-ui;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 48px;
-}
 
 .landing
 {

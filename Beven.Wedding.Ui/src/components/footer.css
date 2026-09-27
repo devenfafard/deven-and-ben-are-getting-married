@@ -1,7 +1,7 @@
 .footer
 {
-    background-color: #062213;
-    fill: #062213;
+    background-color: var(--buttdust);
+    fill: var(--buttdust);
 
     height: 5%;
     width: 100%;
@@ -20,10 +20,14 @@
 
 .footer p
 {
-    color: #3d472f;
-    font-size: 25px;
-    line-height: 35px;
-    font-family: Alata, Sans-serif, serif;
+    color: var(--light-green);
+    font-size: var(--smollest-size);
+    font-family: var(--notfancy), system-ui;
+}
+
+.footer li, .footer a:link, .footer a:visited
+{
+    color: var(--light-red);
 }
 
 .wave

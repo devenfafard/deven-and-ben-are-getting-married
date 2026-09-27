@@ -43,7 +43,7 @@ const SaveTheDate = () =>
                 </div>
                 <div className="saveTheDate-faqContainer-right">
                     <h2>Weather Considerations</h2>
-                    <p>Our wedding will take place on the estate grounds, rain or shine! In the event of <a target="_blank" href="https://youtu.be/WXC4Ey9ZXEE?si=slP7jOaaj06wfTPf&t=19">inclement weather</a>, we will notify you ahead of time.</p>
+                    <p>Our wedding will take place on the estate grounds, rain or shine! In the event of <a target="_blank" href="https://media1.tenor.com/m/xCk_nRiiingAAAAd/cant-control-the-weather-damn-jackie.gif">inclement weather</a>, we will notify you ahead of time.</p>
                 </div>
                 <div className="saveTheDate-faqContainer-left">
                     <h2>Accommodations</h2>

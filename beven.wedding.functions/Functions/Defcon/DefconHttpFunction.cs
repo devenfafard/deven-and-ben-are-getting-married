@@ -37,7 +37,7 @@ public class DefconHttpFunction(ILogger<DefconHttpFunction> logger,
         }
 
         var validationResult = await validator.ValidateAsync(deserializedSafeguardDto);
-
+        
         if (validationResult.IsValid is false)
         {
             return BadRequestResponse(validationResult.Errors.Select(static e => e.ErrorMessage));

@@ -24,8 +24,7 @@
     padding-right: 15px;
     padding-left: 15px;
 
-    font-family: Alata, Sans-serif, serif;
-    font-size: 28px;
+    font-family: var(--notfancy), system-ui;
 }
 
 .info-card-box
@@ -39,8 +38,7 @@
     padding-right: 15px;
     padding-left: 15px;
 
-    font-family: Alata, Sans-serif, serif;
-    font-size: 28px;
+    font-family: var(--notfancy), system-ui;
 }
 
 .info-button

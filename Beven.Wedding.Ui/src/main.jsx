@@ -19,9 +19,11 @@ const Main = () =>
         defconLevel: 0,
         safeDisplayName: ""
     });
+
     function SetPartyData(data)
     {
         console.log(data.map(p => p.FirstName).join(" & "))
+
         setPartyInfo({
             safeDisplayName: data.map(p => p.FirstName).join(" & "),
             defconLevel: data[0]["DefconLevel"], //TODO - update shape of backup

@@ -3,8 +3,9 @@
     position: absolute;
     width: 100%;
     height: 10%;
-
     display: flex;
+
+    font-size: var(--smollest-size);
 }
 
 .header-floating
@@ -14,10 +15,12 @@
     width: 100%;
     height: 10%;
 
-    color: var(--pure-white);
     display: flex;
     box-shadow: 0 1px 70px rgba(0, 0, 0, 0.5);
     transition: all .5s ease;
+    background-color: var(--pure-white);
+
+    font-size: var(--smollest-size);
 }
 
 .header p
@@ -25,17 +28,23 @@
     margin: 0;
 }
 
-.header button
+.header-icon
 {
-    cursor: pointer;
-    color: var(--pure-white);
+    height: 100%;
+    width: auto;
+    object-fit: contain;
 }
 
-.header-floating button
+.header-icon-button, .header-floating header-icon-button
 {
     cursor: pointer;
-    color: var(--pure-white);
-    font-size: large;
+    height: 100%;
+    width: auto;
+
+    font-size: var(--title-size) !important;
+    border: none;
+    font-family: var(--header), system-ui;
+    color: var(--black) !important;
 }
 
 .header-left
@@ -44,50 +53,39 @@
     padding-left: 2%;
     display: flex;
     justify-content: flex-start;
-    background-color:transparent;
-    border: none;
-}
-
-.header-left button
-{
-    height: 80%;
-    width: auto;
-    align-self: center;
-    font-size: 48px;
-    background-color:transparent;
-    border: none;
-    font-family: var(--header), system-ui;
-}
-
-.header-button
-{
-    height: 80%;
-    width: auto;
-    align-self: center;
-    font-size: 64px;
-    background-color:transparent;
-    border: none;
-    font-family: var(--fancy), system-ui;
-}
-
-.header-icon
-{
-    height: 100%;
-    width: auto;
-    font-family: var(--fancy), system-ui;
-
-    object-fit: contain;
 }
 
 .header-right
 {
-    width: 50%;
+    width: 90%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     text-align: center;
     padding: 2px;
     margin: 1%;
+}
+
+.header-right button, .header-floating button
+{
+    cursor: pointer;
+    font-size: var(--smollest-size);
+    color: var(--black);
+}
+
+.header-right p
+{
+    font-family: var(--notfancy), system-ui;
+    color: var(--red);
+    padding: 2px;
+    margin: 1%;
+}
+
+.header-right h2
+{
+    padding: 1px;
+    margin: 1%;
+    font-family: var(--notfancy), system-ui;
 }
 
 .login-button
@@ -97,30 +95,7 @@
     margin: 1%;
     padding-left: 2%;
     padding-right: 2%;
-    color: var(--tan);
+    color: var(--tan) !important;
     font-family: var(--notfancy), system-ui;
     background-color: var(--red)
-}
-
-.header-button
-{
-    border-color: inherit;
-    background-color: inherit;
-    font-family: inherit;
-    padding-left: 2%;
-    padding-right: 2%;
-    height: 100%;
-}
-
-.header-right p
-{
-    margin: 0;
-    font-family: var(--notfancy), system-ui;
-    color: var(--red);
-}
-
-.header-right h2
-{
-    padding: 2px;
-    margin: 1%;
 }
