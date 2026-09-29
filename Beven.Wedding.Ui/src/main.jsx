@@ -33,6 +33,8 @@ const Main = () =>
     }
     async function onSubmit(code)
     {
+        setShowLoginLoader(true);
+
         const req = new Request(
             "https://beven-wedding-fx-fsghcmcrgse2deby.westus2-01.azurewebsites.net/api/defcon",
             {
@@ -55,6 +57,7 @@ const Main = () =>
                         {
                             console.log(data["Value"]["Data"]["Result"]);
                             setLoginError(true);
+                            setShowLoginLoader(false);
                         }
                         else
                         {
@@ -79,6 +82,7 @@ const Main = () =>
 
     const [showLoginPopup, setLoginPopup] = useState(false);
     const [showLoginError, setLoginError] = useState(false);
+    const [showLoginLoader, setShowLoginLoader] = React.useState(false);
     function SetLoginPopup(val)
     {
         setLoginPopup(val);
@@ -86,12 +90,13 @@ const Main = () =>
         if(!val)
         {
             setLoginError(false);
+            setShowLoginLoader(false);
         }
     }
 
     return(
         <BrowserRouter>
-            <LoginPopUp showPopup={showLoginPopup} setPopup={SetLoginPopup} onSubmit={onSubmit} showErr={showLoginError} />
+            <LoginPopUp showPopup={showLoginPopup} setPopup={SetLoginPopup} onSubmit={onSubmit} showErr={showLoginError} showLoader={showLoginLoader} />
             <Header partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} />
             <Routes>
                 <Route path="/" element={<Home partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} />}/>
