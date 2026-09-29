@@ -1,6 +1,7 @@
 .imageButton
 {
     display: flex;
+    justify-content: center;
 
     border-radius: 10px;
     border: 0;
@@ -31,6 +32,12 @@
 .imageButton img:hover
 {
     opacity: 0.8;
+}
+
+.imageButton span
+{
+    position: absolute;
+    align-self: center;
 }
 
 @media screen and (max-width: 800px)
