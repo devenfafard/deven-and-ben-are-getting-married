@@ -24,7 +24,7 @@ const LoginPopUp = ({showPopup, setPopup, showErr, onSubmit, showLoader}) =>
             <button className="closeBackground" onClick={ResetPopup}/>
             {showLoader && <span className="loader"></span>}
             <div className="loginContainer">
-                <div className={"closeLogin"}><ImageButton image={"../src/assets/ui/Close-button.png"}
+                <div className={"closeLogin"}><ImageButton image={"./assets/ui/Close-button.png"}
                                                            onClick={ResetPopup}/></div>
                 {!showLoader && <div>
                     <h2>Enter Your Passcode:</h2>

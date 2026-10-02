@@ -12,7 +12,7 @@
     background: linear-gradient(
             rgba(0, 0, 0, 0.5),
             rgba(0, 0, 0, 0.5)
-    ), url("src/assets/zenda-front.png") no-repeat fixed;
+    ), url("../assets/zenda-front.png") no-repeat fixed;
 
     color: var(--pure-white);
     font-family: var(--notfancy), system-ui;

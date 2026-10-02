@@ -1,7 +1,7 @@
 import React from "react";
 import './faq.css';
 import Wave from '../components/wave.jsx';
-import InfoCard from "../components/infoCard.jsx";
+import NoImage from "../assets/no.png";
 
 const Faq = ({partyInfo}) =>
 {
@@ -25,7 +25,7 @@ const Faq = ({partyInfo}) =>
 
                     <div className="faq-content-section-question">Can I change my passcode?</div>
                     <div className="faq-content-section-answer">
-                        <img className="no" src={"src/assets/no.png"} alt="No."/>
+                        <img className="no" src={NoImage} alt="No."/>
                     </div>
                 </div>
 
