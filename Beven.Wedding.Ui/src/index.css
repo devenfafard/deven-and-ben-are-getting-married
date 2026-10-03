@@ -5,9 +5,6 @@
   height: 100%;
   background-color: transparent;
 
-    padding: 0;
-    margin: 0;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -43,6 +40,9 @@ h1
   font-family: var(--header), system-ui;
   font-weight: var(--thicc);
   font-size: var(--header-size);
+
+  padding: 0;
+  margin: 0;
 }
 
 h2
@@ -50,6 +50,9 @@ h2
   color: var(--black);
   font-family: var(--fancy), system-ui;
   font-size: var(--title-size);
+
+  padding: 0;
+  margin: 0;
 }
 
 p
