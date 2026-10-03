@@ -4,7 +4,7 @@
     height: 65px;
     z-index: 1;
 
-    transform: translateY(-100%);
+    transform: translateY(-99%);
 }
 
 .waveMirror

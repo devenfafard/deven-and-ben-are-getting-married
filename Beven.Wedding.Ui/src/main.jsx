@@ -28,8 +28,6 @@ const Main = () =>
             safeDisplayName: data.map(p => p.FirstName).join(" & "),
             defconLevel: data[0]["DefconLevel"], //TODO - update shape of backup
         });
-
-        console.log("Party info set");
     }
     async function onSubmit(code)
     {
