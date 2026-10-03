@@ -13,5 +13,5 @@
     height: 65px;
     z-index: 1;
 
-    transform: translateY(-100%) scaleX(-1);
+    transform: translateY(-99%) scaleX(-1);
 }
