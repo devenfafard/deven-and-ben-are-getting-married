@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './faq.css';
 import Wave from '../components/wave.jsx';
 import NoImage from "../assets/no.png";
 
 const Faq = ({partyInfo}) =>
 {
+    useEffect(() => {
+        window.scrollTo({top: 0 ,behavior: "instant"});
+    }, [])
     return (
         <div className="faq">
             <div className="faq-top">

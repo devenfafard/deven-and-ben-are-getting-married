@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './saveTheDate.css';
 import Wave from '../components/wave.jsx';
 import InfoCard from "../components/infoCard.jsx";
 
 const SaveTheDate = () =>
 {
+    useEffect(() => {
+        window.scrollTo({top: 0 ,behavior: "instant"});
+    }, [])
     return (
         <div className="saveTheDate">
             <div className="saveTheDate-landing">

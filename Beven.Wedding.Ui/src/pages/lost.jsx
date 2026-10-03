@@ -1,11 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import './lost.css';
 import InfoCard from "../components/infoCard.jsx";
 
 const Lost = ({setLoginPopup}) =>
 {
-
+    useEffect(() => {
+        window.scrollTo({top: 0 ,behavior: "instant"});
+    }, [])
     return (
         <div className="lost">
             <h1>Lost?</h1>

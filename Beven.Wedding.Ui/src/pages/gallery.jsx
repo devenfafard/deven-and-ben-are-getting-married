@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 
 import './gallery.css';
 import Wave from '../components/wave.jsx';
@@ -35,6 +35,10 @@ const Gallery = () =>
         SetImageIndex(index);
         setShowGalleryPopUp(true);
     }
+
+    useEffect(() => {
+        window.scrollTo({top: 0 ,behavior: "instant"});
+    }, [])
 
     return (
         <div className="gallery">

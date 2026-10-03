@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import './home.css';
 import InfoCard from "../components/infoCard.jsx";
@@ -9,6 +9,10 @@ import RingImage from "../assets/rings.png";
 const Home = ({partyInfo, setLoginPopup}) =>
 {
     const navigate = useNavigate();
+
+    useEffect(() => {
+        window.scrollTo({top: 0 ,behavior: "instant"});
+    }, [])
 
     return (
         <div className="home">
