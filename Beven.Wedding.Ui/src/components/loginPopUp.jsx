@@ -2,6 +2,8 @@ import "./loginPopUp.css";
 import React from "react";
 import ImageButton from "./imageButton.jsx";
 
+import CloseButton from "../assets/ui/CloseButton.png";
+
 const LoginPopUp = ({showPopup, setPopup, showErr, onSubmit, showLoader}) =>
 {
     const [code, setCode] = React.useState("");
@@ -24,7 +26,7 @@ const LoginPopUp = ({showPopup, setPopup, showErr, onSubmit, showLoader}) =>
             <button className="closeBackground" onClick={ResetPopup}/>
             {showLoader && <span className="loader"></span>}
             <div className="loginContainer">
-                <div className={"closeLogin"}><ImageButton image={"src/assets/ui/CloseButton.png"}
+                <div className={"closeLogin"}><ImageButton image={CloseButton}
                                                            onClick={ResetPopup}/></div>
                 {!showLoader && <div>
                     <h2>Enter Your Passcode:</h2>
