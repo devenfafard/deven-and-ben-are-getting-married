@@ -11,7 +11,7 @@ const Home = ({partyInfo, setLoginPopup}) =>
     const navigate = useNavigate();
 
     return (
-        <div className="home" style={{backgroundImage: "url(" + RingImage + ")"}}>
+        <div className="home">
             <div className="landing">
                 <h1>Deven and Ben are getting married!</h1>
             </div>

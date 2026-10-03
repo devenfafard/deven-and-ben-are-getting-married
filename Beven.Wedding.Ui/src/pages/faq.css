@@ -21,14 +21,13 @@
 .faq-line h1
 {
     padding-top: 10%;
-    height: 15vh;
+    height: auto;
 }
 
 .faq-line h2
 {
-    padding-top: 5%;
     padding-bottom: 5%;
-    height: 15vh;
+    height: auto;
 
     font-family: var(--notfancy), system-ui;
     font-size: var(--smoll-size);
