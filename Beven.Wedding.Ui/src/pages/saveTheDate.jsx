@@ -9,13 +9,13 @@ const SaveTheDate = () =>
         <div className="saveTheDate">
             <div className="saveTheDate-landing">
                 <div className="saveTheDate-top">
-                    February 18th, 2028
+                    <h3>February 18th, 2028</h3>
                 </div>
                 <div className="saveTheDate-middle">
                     <h4>⟡</h4> <h1>Save the Date</h1> <h4>⟡</h4>
                 </div>
                 <div className="saveTheDate-bottom">
-                    Indio, CA
+                    <h3>Indio, CA</h3>
                 </div>
             </div>
 

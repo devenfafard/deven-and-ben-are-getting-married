@@ -55,6 +55,14 @@ h2
   margin: 0;
 }
 
+h3
+{
+    font-size: var(--title-size);
+
+    padding: 0;
+    margin: 0;
+}
+
 h4
 {
     padding: 0;

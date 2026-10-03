@@ -4,12 +4,14 @@ import './home.css';
 import InfoCard from "../components/infoCard.jsx";
 import {useNavigate} from "react-router-dom";
 
+import RingImage from "../assets/rings.png";
+
 const Home = ({partyInfo, setLoginPopup}) =>
 {
     const navigate = useNavigate();
 
     return (
-        <div className="home">
+        <div className="home" style={{backgroundImage: "url(" + RingImage + ")"}}>
             <div className="landing">
                 <h1>Deven and Ben are getting married!</h1>
             </div>
