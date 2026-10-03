@@ -11,6 +11,7 @@ import Home from "./pages/home.jsx";
 import Gallery from "./pages/gallery.jsx";
 import SaveTheDate from "./pages/saveTheDate.jsx";
 import Faq from "./pages/faq.jsx";
+import Lost from "./pages/lost.jsx";
 import LoginPopUp from "./components/loginPopUp.jsx";
 
 const Main = () =>
@@ -99,8 +100,9 @@ const Main = () =>
             <Routes>
                 <Route path="/" element={<Home partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} />}/>
                 <Route path="/gallery" element={<Gallery/>}/>
-                <Route path="/save-the-date" element={partyInfo.defconLevel > 0 && <SaveTheDate/>}/>
+                <Route path="/save-the-date" element={partyInfo.defconLevel > 0 ? <SaveTheDate/> : <Lost setLoginPopup={() => SetLoginPopup}/>}/>
                 <Route path="/faq" element={<Faq partyInfo={partyInfo}/>}/>
+                <Route path="/404" element={<Lost setLoginPopup={() => SetLoginPopup}/>}/>
             </Routes>
             <Footer/>
         </BrowserRouter>
