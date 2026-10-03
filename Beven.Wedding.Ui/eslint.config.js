@@ -25,9 +25,5 @@ export default defineConfig([
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },
-    navigationFallback: {
-      rewrite: "/index.html",
-      exclude: ["/images/*.{png,jpg,gif}", "/css/*"]
-    }
   },
 ])
