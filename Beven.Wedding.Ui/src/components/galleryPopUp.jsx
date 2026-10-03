@@ -2,9 +2,9 @@ import "./galleryPopUp.css";
 import ImageButton from "./imageButton.jsx";
 import React from "react";
 
-import CloseButton from "../assets/ui/CloseButton.png";
-import ArrowLeft from "../assets/ui/Arrow-left.png";
-import ArrowRight from "../assets/ui/Arrow-right.png";
+import CloseButton from "../assets/CloseButton.png";
+import ArrowLeft from "../assets/Arrow-left.png";
+import ArrowRight from "../assets/Arrow-right.png";
 
 const GalleryPopUp = ({showPopup, closePopup, image, currentIndex, maxIndex, arrowPrev, arrowNext}) =>
 {

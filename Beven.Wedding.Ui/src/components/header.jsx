@@ -53,7 +53,7 @@ const Header = ({partyInfo = { safeDisplayName: "", defconLevel: 0}, setLoginPop
                 <button onClick={() => { navigate("/")}}>Home</button>
                 <button onClick={() => { navigate("/gallery")}}>Gallery</button>
                 {partyInfo.defconLevel > 0 && <button onClick={() => { navigate("/save-the-date")}}>Save the Date</button>}
-                {partyInfo.defconLevel > 0 && <button onClick={() => { navigate("/faq")}}>FAQ</button>}
+                <button onClick={() => { navigate("/faq")}}>FAQ</button>
             </div>
         </div>
     )

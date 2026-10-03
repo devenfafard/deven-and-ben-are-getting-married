@@ -2,7 +2,7 @@ import "./loginPopUp.css";
 import React from "react";
 import ImageButton from "./imageButton.jsx";
 
-import CloseButton from "../assets/ui/CloseButton.png";
+import CloseButton from "../assets/CloseButton.png";
 
 const LoginPopUp = ({showPopup, setPopup, showErr, onSubmit, showLoader}) =>
 {
