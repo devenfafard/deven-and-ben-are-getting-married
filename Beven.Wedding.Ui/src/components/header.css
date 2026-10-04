@@ -55,6 +55,17 @@
     justify-content: flex-start;
 }
 
+.header-left button
+{
+    object-fit: cover;
+}
+
+.header-left img
+{
+    width: auto;
+    height: 100%;
+}
+
 .header-right
 {
     width: 90%;

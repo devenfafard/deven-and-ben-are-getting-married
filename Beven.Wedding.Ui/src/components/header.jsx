@@ -3,6 +3,8 @@ import {useNavigate} from "react-router-dom";
 
 import './header.css';
 
+import DBLogo from '../assets/DB_Logo.png';
+
 const Header = ({partyInfo = { safeDisplayName: "", defconLevel: 0}, setLoginPopup}) =>
 {
     const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -42,7 +44,7 @@ const Header = ({partyInfo = { safeDisplayName: "", defconLevel: 0}, setLoginPop
         <div className={headerClassName}>
             <div className="header-left">
                 <button className="header-icon-button" onClick={() => { navigate("/")}}>
-                    D ❤ B
+                    <img src={DBLogo} alt={"D ❤ B"}></img>
                 </button>
             </div>
 
