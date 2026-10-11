@@ -54,3 +54,28 @@
 
     aspect-ratio: 1/1;
 }
+
+@media screen and (max-width: 1080px)
+{
+    .gallery-top
+    {
+        padding-bottom: 8%;
+    }
+
+    .gallery-wall
+    {
+        padding-bottom: 10%;
+    }
+
+    .gallery-container
+    {
+        justify-content: flex-start;
+
+        padding: 1%;
+    }
+
+    .gallery-container button
+    {
+        width: 48%;
+    }
+}

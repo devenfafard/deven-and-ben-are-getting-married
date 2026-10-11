@@ -40,8 +40,6 @@ const SaveTheDate = () =>
                 <Wave/>
                 <div className="saveTheDate-faqContainer-left">
                     <h2>Dress Code</h2>
-                </div>
-                <div className="saveTheDate-faqContainer-left">
                     <p>Come dance the night away with us wearing your best cocktail attire! Please note that our ceremony will take place on a grass lawn, so plan your shoe choice accordingly.</p>
                 </div>
                 <div className="saveTheDate-faqContainer-right">

@@ -172,3 +172,34 @@
 {
     font-size: var(--large-body-size), system-ui;
 }
+
+@media screen and (max-width: 1080px)
+{
+    .saveTheDate-top
+    {
+        padding-top: 15%;
+        padding-left: 15%;
+    }
+
+    .saveTheDate-bottom
+    {
+        padding-bottom: 10%;
+    }
+
+    .saveTheDate-content-section
+    {
+        padding-bottom: 2%;
+    }
+
+    .saveTheDate-faqContainer-left
+    {
+        padding-right: 15%;
+        padding-bottom: 5%;
+    }
+
+    .saveTheDate-faqContainer-right
+    {
+        padding-left: 15%;
+        padding-bottom: 5%;
+    }
+}

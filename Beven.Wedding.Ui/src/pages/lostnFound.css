@@ -1,0 +1,22 @@
+.lostnFound
+{
+    width: 100%;
+    height: auto;
+
+    background-color: var(--light-green);
+}
+
+.lostnFound img
+{
+    width: 50%;
+}
+
+.lostBackground
+{
+    height: auto;
+}
+
+.lostBackground h1
+{
+    padding-top: 8%;
+}

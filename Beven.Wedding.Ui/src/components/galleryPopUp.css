@@ -80,3 +80,24 @@
     height: 15%;
     aspect-ratio: 1;
 }
+
+@media screen and (max-width: 1080px)
+{
+    .imageContainer
+    {
+        height: auto;
+        width: 90%;
+    }
+
+    .arrow-left
+    {
+        height: 10%;
+        aspect-ratio: 1;
+    }
+
+    .arrow-right
+    {
+        height: 10%;
+        aspect-ratio: 1;
+    }
+}

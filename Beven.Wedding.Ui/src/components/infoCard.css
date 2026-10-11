@@ -70,3 +70,11 @@
     font-family: var(--notfancy), system-ui;
     background-color: transparent;
 }
+
+@media screen and (max-width: 1080px)
+{
+    .info-card-content
+    {
+        width: 80%;
+    }
+}

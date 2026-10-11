@@ -118,3 +118,12 @@ input[type=text]
     border: none;
     font-family: var(--notfancy), system-ui;
 }
+
+@media screen and (max-width: 1080px)
+{
+    .loginContainer
+    {
+        height: auto;
+        width: 80%;
+    }
+}
