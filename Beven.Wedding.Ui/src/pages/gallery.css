@@ -55,7 +55,7 @@
     aspect-ratio: 1/1;
 }
 
-@media screen and (max-width: 1080px)
+@media only screen and (max-width: 768px)
 {
     .gallery-top
     {
