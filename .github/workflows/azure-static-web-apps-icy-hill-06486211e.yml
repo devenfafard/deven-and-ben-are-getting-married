@@ -41,10 +41,9 @@ jobs:
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "Beven.Wedding.Ui/dist" # App source code path
-          config_file_location: "Beven.Wedding.Ui/src"
           api_location: "" # Api source code path - optional
           output_location: "src/" # Built app content directory - optional
-          github_id_token: ${{ steps.idtoken.outputs.result }}
+          repo_token: ${{ steps.idtoken.outputs.result }}
           skip_app_build: false
           ###### End of Repository/Build Configurations ######
 
