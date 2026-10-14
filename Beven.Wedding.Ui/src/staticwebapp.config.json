@@ -1,0 +1,17 @@
+{
+  "responseOverrides": {
+    "400": {
+      "rewrite": "/src/pages/lost.jsx"
+    },
+    "401": {
+      "statusCode": 302,
+      "redirect": "/login"
+    },
+    "403": {
+      "rewrite": "/src/pages/lost.jsx"
+    },
+    "404": {
+      "rewrite": "/src/pages/lost.jsx"
+    }
+  }
+}
