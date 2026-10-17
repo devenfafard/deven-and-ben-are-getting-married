@@ -28,8 +28,8 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    height: 50%;
-    width: auto;
+    height: auto;
+    width: 80%;
     border-radius: 30px;
     border: 1vh solid;
     aspect-ratio: 2/1;
@@ -104,7 +104,7 @@
     width: 100%;
     font-family: var(--notfancy), system-ui;
     color: var(--black);
-    margin: 1%;
+    margin: 2%;
     font-size: 16px;
 }
 
@@ -119,11 +119,11 @@ input[type=text]
     font-family: var(--notfancy), system-ui;
 }
 
-@media screen and (max-width: 1080px)
+@media screen and (min-width: 768px)
 {
     .loginContainer
     {
-        height: auto;
-        width: 80%;
+        height: 50%;
+        width: auto;
     }
 }

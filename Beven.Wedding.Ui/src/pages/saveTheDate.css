@@ -34,7 +34,7 @@
 
 .saveTheDate-top h3
 {
-    font-size: var(--large-body-size);
+    font-size: var(--smoll-size);
 }
 
 .saveTheDate-middle
@@ -194,7 +194,7 @@
 {
     .saveTheDate-top
     {
-        padding-top: 15%;
+        padding-top: 10%;
         padding-left: 15%;
     }
 

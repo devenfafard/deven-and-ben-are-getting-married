@@ -77,6 +77,11 @@
         padding: 5% 0;
     }
 
+    .faq-line h1
+    {
+        padding-top: 0;
+    }
+
     .faq-content-section-answer
     {
         padding-bottom: 2%;
