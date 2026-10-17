@@ -6,13 +6,13 @@
 
 .saveTheDate-landing
 {
-    background-position-x: center;
-    background-position-y: top;
-    background-size: cover;
     background: linear-gradient(
             rgba(0, 0, 0, 0.5),
             rgba(0, 0, 0, 0.5)
     ), url("../assets/zenda-front.png") no-repeat fixed;
+    background-position-x: center;
+    background-position-y: top;
+    background-size: cover;
 
     color: var(--pure-white);
     font-family: var(--notfancy), system-ui;
@@ -26,9 +26,15 @@
     flex-wrap: wrap;
     justify-content: left;
 
-    padding-top: 10%;
-    padding-left: 15%;
+    padding-top: 15%;
+    padding-left: 5%;
+    padding-bottom: 5%;
     height: auto;
+}
+
+.saveTheDate-top h3
+{
+    font-size: var(--large-body-size);
 }
 
 .saveTheDate-middle
@@ -36,6 +42,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
 
     padding-top: 5%;
     height: auto;
@@ -45,6 +52,9 @@
 {
     font-family: var(--fancy), system-ui;
     color: var(--pure-white);
+    font-size: var(--title-size);
+
+    padding-top: 4%;
 }
 
 .saveTheDate-middle h4
@@ -63,10 +73,15 @@
     flex-wrap: wrap;
     justify-content: right;
 
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-right: 15%;
+    padding-top: 10%;
+    padding-bottom: 15%;
+    padding-right: 5%;
     height: auto;
+}
+
+.saveTheDate-bottom h3
+{
+    font-size: var(--large-body-size);
 }
 
 .saveTheDate-content-section
@@ -90,7 +105,7 @@
     justify-content: center;
     background-color: var(--tan);
     fill: var(--tan);
-    padding-bottom: 3%;
+    padding-bottom: 10%;
 
     height: auto;
 }
@@ -146,8 +161,9 @@
     justify-content: left;
     text-align: left;
     width: 100%;
-    padding-left: 10%;
-    padding-right: 40%;
+    padding-left: 5%;
+    padding-right: 10%;
+    padding-bottom: 5%;
     font-size: var(--large-body-size), system-ui;
 }
 
@@ -158,8 +174,9 @@
     justify-content: right;
     text-align: right;
     width: 100%;
-    padding-left: 40%;
-    padding-right: 10%;
+    padding-left: 10%;
+    padding-right: 5%;
+    padding-bottom: 5%;
     font-size: var(--large-body-size), system-ui;
 }
 
@@ -173,7 +190,7 @@
     font-size: var(--large-body-size), system-ui;
 }
 
-@media screen and (max-width: 1080px)
+@media screen and (min-width: 768px)
 {
     .saveTheDate-top
     {
@@ -181,25 +198,47 @@
         padding-left: 15%;
     }
 
+    .saveTheDate-top h3
+    {
+        font-size: var(--title-size);
+    }
+
+    .saveTheDate-middle h1
+    {
+        font-size: var(--header-size);
+        padding-top: 0;
+    }
+
     .saveTheDate-bottom
     {
+        padding-top: 5%;
         padding-bottom: 10%;
+    }
+
+    .saveTheDate-bottom h3
+    {
+        font-size: var(--title-size);
+    }
+
+    .saveTheDate-locationContainer
+    {
+        padding-bottom: 3%;
     }
 
     .saveTheDate-content-section
     {
-        padding-bottom: 2%;
+        padding-bottom: 5%;
     }
 
     .saveTheDate-faqContainer-left
     {
-        padding-right: 15%;
-        padding-bottom: 5%;
+        padding-right: 40%;
+        padding-bottom: 0;
     }
 
     .saveTheDate-faqContainer-right
     {
-        padding-left: 15%;
-        padding-bottom: 5%;
+        padding-left: 40%;
+        padding-bottom: 0;
     }
 }

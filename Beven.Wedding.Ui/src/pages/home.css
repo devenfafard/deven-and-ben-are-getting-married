@@ -1,10 +1,10 @@
 .home
 {
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.0),
+            rgba(0, 0, 0, 0.5)
+    ), url("../assets/rings-short.png") no-repeat fixed center;
     background-size: cover;
-    background-attachment: fixed;
-    background-image: url("../assets/rings-short.png");
 
     width: 100%;
     height: auto;
@@ -37,7 +37,11 @@
 {
     .home
     {
-        background-image: url("../assets/rings.png");
+        background: linear-gradient(
+                rgba(0, 0, 0, 0.0),
+                rgba(0, 0, 0, 0.5)
+        ), url("../assets/rings.png") no-repeat fixed center;
+        background-size: cover;
     }
 
     .landing
