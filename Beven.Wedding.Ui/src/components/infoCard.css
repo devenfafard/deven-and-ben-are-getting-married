@@ -2,7 +2,6 @@
 {
     width: 100%;
     height: auto;
-    padding-top: 2px;
     padding-bottom: 2%;
 
     display: flex;
@@ -16,9 +15,9 @@
 
 .info-card-content
 {
-    width: 60%;
+    width: 80%;
     height: auto;
-    margin-bottom: 5%;
+    margin-bottom: 15%;
 
     border-radius: 25px;
     padding-right: 15px;
@@ -71,10 +70,16 @@
     background-color: transparent;
 }
 
-@media screen and (max-width: 1080px)
+@media screen and (min-width: 768px)
 {
+    .info-card
+    {
+        padding-top: 2px;
+    }
+
     .info-card-content
     {
-        width: 80%;
+        width: 60%;
+        margin-bottom: 5%;
     }
 }
