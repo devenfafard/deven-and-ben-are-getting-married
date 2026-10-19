@@ -110,8 +110,3 @@
     font-family: var(--notfancy), system-ui;
     background-color: var(--red)
 }
-
-@media screen and (max-width: 1080px)
-{
-
-}

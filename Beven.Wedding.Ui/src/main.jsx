@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './index.css';
 
 import Header from "./components/header.jsx";
+import Header_M from "./components/header_m.jsx";
 import Footer from './components/footer.jsx';
 
 import Home from "./pages/home.jsx";
@@ -93,10 +94,16 @@ const Main = () =>
         }
     }
 
+    let useMobileHeader = false;
+    if(screen.width > 768)
+    {
+        useMobileHeader = true;
+    }
+
     return(
         <BrowserRouter>
             <LoginPopUp showPopup={showLoginPopup} setPopup={SetLoginPopup} onSubmit={onSubmit} showErr={showLoginError} showLoader={showLoginLoader} />
-            <Header partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} />
+            {useMobileHeader ? <Header_M partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} /> : <Header partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} /> }
             <Routes>
                 <Route path="/" element={<Home partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} />}/>
                 <Route path="/gallery" element={<Gallery/>}/>

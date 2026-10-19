@@ -1,0 +1,57 @@
+.header-m
+{
+    width: 10%;
+    height: 100%;
+}
+
+.header_m_toggle
+{
+    position: fixed;
+
+    width: 20%;
+    height: auto;
+
+    padding-top: 5%;
+    padding-left: 3%;
+}
+
+.header_m_toggle button
+{
+    object-fit: contain;
+}
+
+.header_m_closed
+{
+    width: 0;
+    display: none;
+}
+
+.header_m_background
+{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+
+    background-color: var(--transparent-black);
+}
+
+.header_m_menu
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+
+    background: var(--pure-white);
+    width: 25%;
+    height: 100%;
+    box-shadow: 0 1px 70px rgba(0, 0, 0, 0.5);
+    transition: all .5s ease;
+}
+
+.header_m_menu button
+{
+    width: 100%;
+    padding: 5%;
+    object-fit: contain;
+}
