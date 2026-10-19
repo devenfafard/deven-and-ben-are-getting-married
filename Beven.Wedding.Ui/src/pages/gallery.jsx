@@ -49,7 +49,7 @@ const Gallery = () =>
             </div>
 
             <div className="gallery-wall">
-                <Wave isMirror={true}/>
+                <Wave isMirror={false}/>
 
                 <div className="gallery-container">
                     {images.map((image, index) =>

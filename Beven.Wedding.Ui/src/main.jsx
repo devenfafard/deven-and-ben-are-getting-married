@@ -95,7 +95,7 @@ const Main = () =>
     }
 
     let useMobileHeader = false;
-    if(screen.width > 768)
+    if(screen.width < 768)
     {
         useMobileHeader = true;
     }
