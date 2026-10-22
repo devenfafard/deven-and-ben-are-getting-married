@@ -18,7 +18,7 @@ const Faq = ({partyInfo}) =>
             </div>
 
             <div className="faq-content-section">
-                <Wave isMirror={true}/>
+                <Wave/>
                 <div className="faq-content-section-group">
                     <div className="faq-content-section-question">Where do I get a passcode?</div>
                     <div className="faq-content-section-answer">We have sent your personalized passcode to you via text or email.</div>

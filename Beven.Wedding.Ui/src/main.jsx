@@ -109,7 +109,7 @@ const Main = () =>
                 <Route path="/gallery" element={<Gallery/>}/>
                 <Route path="/save-the-date" element={partyInfo.defconLevel > 0 ? <SaveTheDate/> : <Lost setLoginPopup={() => SetLoginPopup}/>}/>
                 <Route path="/faq" element={<Faq partyInfo={partyInfo}/>}/>
-                <Route path="/" element={<Lost setLoginPopup={() => SetLoginPopup}/>}/>
+                <Route path="*" element={<Lost setLoginPopup={() => SetLoginPopup}/>}/>
             </Routes>
             <Footer/>
         </BrowserRouter>
