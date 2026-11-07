@@ -30,16 +30,21 @@ const Header_M = ({partyInfo = { safeDisplayName: "", defconLevel: 0}, setLoginP
 
             <div className={headerClassName} onClick={ ()=>setShowHeader(false) }>
                 <div className={"header_m_menu"}>
-                    <ImageButton image={DBLogo} onClick={() => { navigate("/")}}/>
+                    <div className={"header_m_logo"}>
+                        <ImageButton image={DBLogo} onClick={() => { navigate("/")}}/>
+                    </div>
 
-                    <button onClick={() => { navigate("/")}}>Home</button>
-                    <button onClick={() => { navigate("/gallery")}}>Gallery</button>
-                    {partyInfo.defconLevel > 0 && <button onClick={() => { navigate("/save-the-date")}}>Save the Date</button>}
-                    <button onClick={() => { navigate("/faq")}}>FAQ</button>
+                    <div className={"header_m_navmenu"}>
+                        <button onClick={() => { navigate("/")}}>Home</button>
+                        <button onClick={() => { navigate("/gallery")}}>Gallery</button>
+                        {partyInfo.defconLevel > 0 && <button onClick={() => { navigate("/save-the-date")}}>Save the Date</button>}
+                        <button onClick={() => { navigate("/faq")}}>FAQ</button>
+                    </div>
 
-                    <h2>----</h2>
-                    {partyInfo.defconLevel < 1 && <button className="login-button" onClick={setLoginPopup(true)}>Login</button>}
-                    {partyInfo.defconLevel > 0 && <p>{partyInfo.safeDisplayName}</p>}
+                    <div className={"header_m_login"}>
+                        {partyInfo.defconLevel < 1 && <button className="login-button" onClick={setLoginPopup(true)}>Login</button>}
+                        {partyInfo.defconLevel > 0 && <p>{partyInfo.safeDisplayName}</p>}
+                    </div>
                 </div>
             </div>
         </div>

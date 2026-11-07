@@ -1,6 +1,6 @@
 .header-m
 {
-    width: 10%;
+    width: 15%;
     height: 100%;
 }
 
@@ -50,9 +50,47 @@
     transition: all .5s ease;
 }
 
-.header_m_menu button
+.header_m_logo
+{
+    width: 100%;
+    height: 10%;
+}
+
+.header_m_logo button
 {
     width: 100%;
     padding: 5%;
     object-fit: contain;
+}
+
+.header_m_navmenu
+{
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    justify-content: start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.header_m_navmenu button
+{
+    text-align: start;
+
+    padding-bottom: 20%;
+}
+
+.header_m_login
+{
+    width: 100%;
+
+    align-self: flex-end;
+
+    padding-bottom: 20%;
+}
+
+.header_m_login button
+{
+    width: 80%;
 }
