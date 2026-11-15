@@ -1,7 +1,7 @@
 using Azure.Identity;
 using Microsoft.Extensions.Hosting;
 
-namespace beven.wedding.functions.Infrastructure;
+namespace beven.wedding.functions.Infrastructure.Storage;
 
 public static class AzureCredentialProvider
 {
