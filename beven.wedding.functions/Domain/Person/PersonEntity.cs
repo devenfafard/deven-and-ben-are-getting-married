@@ -12,10 +12,7 @@ public record PersonEntity: EntityBase
     {
         // Required for deserialization.
     }
-
-    /// <summary>
-    /// 
-    /// </summary>
+    
     /// <param name="groupAlias">String representation of someone's group alias. Each alias may have one or more people
     /// assigned to it.</param>
     /// <param name="firstName">String representation of someone's first name.</param>

@@ -1,10 +1,10 @@
 {
   "EmailOptions":
   {
-    "sender": "deven@deven.com",
+    "sender": "DoNotReply@b02a5c95-8a71-48af-b599-006f32bddcdf.azurecomm.net",
     "PasscodeRequestEmailContent": {
       "Subject": "Passcode request",
-      "HtmlBody": "henlo worl",
+      "HtmlBody": "henlo worl your passcode is x_PLACEHOLDER_x",
       "PasscodePlaceholder": "x_PLACEHOLDER_x"
     }}
 }

@@ -14,7 +14,8 @@ public static class EmailServices
     {
         _services = services;
      
-        _services.AddTransient<EmailOptionsValidator>();
+        _services.AddTransient<EmailOptionsValidator>()
+            .AddTransient<EmailContentMapper>();
         
         AddOptions(configuration);
         
