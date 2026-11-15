@@ -9,6 +9,8 @@ public class EmailOptionsValidator : AbstractValidator<EmailOptions>
 {
     public EmailOptionsValidator()
     {
+        RuleFor(static o => o.ConnectionString).NotEmpty();
+        
         RuleFor(static o => o.Sender)
             .NotEmpty()
             .EmailAddress();

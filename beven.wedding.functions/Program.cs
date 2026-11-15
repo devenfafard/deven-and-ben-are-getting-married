@@ -10,8 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using FluentValidation;
 using Serilog;
-using Azure.Core.Diagnostics;
-using System.Diagnostics.Tracing;
 
 namespace beven.wedding.functions;
 
@@ -19,14 +17,6 @@ public static class Program
 {
     public static async Task Main()
     {
-        var diagPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "beven-startup.log");
-        var diagLock = new object();
-        void Diag(string msg) { lock (diagLock) File.AppendAllText(diagPath, $"{DateTime.Now:HH:mm:ss.fff} {msg}{Environment.NewLine}"); }
-
-        using var azureLogs = new AzureEventSourceListener((e, msg) => Diag($"[{e.EventSource.Name}] {msg}"), EventLevel.Verbose);
-        Diag("Main started");
-        Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
-        
         try
         {
             Log.Information("====== Started {AppTitle} ======", Constants.AppTitle);
@@ -40,7 +30,6 @@ public static class Program
         }
         catch (Exception exception)
         {
-            Diag(exception.ToString());
             Log.Fatal(exception, "{AppTitle} terminated unexpectedly :( ", Constants.AppTitle);
         }
         finally
@@ -84,8 +73,8 @@ public static class Program
                 services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), ServiceLifetime.Transient)
                     .AddSingleton(context.GetAzureCredential())
                     .AddInfrastructureServices()
-                    .AddDefconServices();
-                //.AddEmailServices(context.Configuration);
+                    .AddDefconServices()
+                    .AddEmailServices(context.Configuration);
             })
             .Build();
 }

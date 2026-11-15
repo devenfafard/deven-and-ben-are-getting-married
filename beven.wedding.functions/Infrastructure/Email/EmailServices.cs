@@ -18,7 +18,7 @@ public static class EmailServices
         
         AddOptions(configuration);
         
-        //_services.AddSingleton<EmailOperationClient>();
+        _services.AddSingleton<EmailOperationClient>();
 
         return _services;
     }

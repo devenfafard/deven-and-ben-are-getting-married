@@ -1,6 +1,10 @@
 {
   "EmailOptions":
   {
-    "sender": "deven@deven.com"
-  }
+    "sender": "deven@deven.com",
+    "PasscodeRequestEmailContent": {
+      "Subject": "Passcode request",
+      "HtmlBody": "henlo worl",
+      "PasscodePlaceholder": "x_PLACEHOLDER_x"
+    }}
 }

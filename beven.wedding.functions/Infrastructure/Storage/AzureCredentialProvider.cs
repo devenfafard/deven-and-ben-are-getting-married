@@ -11,11 +11,14 @@ public static class AzureCredentialProvider
     {
         if (_credential is not null)
             return _credential;
-        
+
         _credential = context.HostingEnvironment.IsDevelopment()
-            ? new ChainedTokenCredential(new DefaultAzureCredential(), new AzureCliCredential(), new VisualStudioCredential())
+            ? new ChainedTokenCredential(
+                new DefaultAzureCredential(
+                    new DefaultAzureCredentialOptions { ExcludeManagedIdentityCredential = true }),
+                new AzureCliCredential(), new VisualStudioCredential())
             : new ChainedTokenCredential(new ManagedIdentityCredential(new ManagedIdentityCredentialOptions()));
-        
+
         return _credential;
     }
 }
