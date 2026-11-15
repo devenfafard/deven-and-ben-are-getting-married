@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using FluentValidation;
 using Serilog;
+using Azure.Core.Diagnostics;
+using System.Diagnostics.Tracing;
 
 namespace beven.wedding.functions;
 
@@ -17,6 +19,8 @@ public static class Program
 {
     public static async Task Main()
     {
+        Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+        
         try
         {
             Log.Information("====== Started {AppTitle} ======", Constants.AppTitle);
