@@ -19,6 +19,12 @@ public static class Program
 {
     public static async Task Main()
     {
+        var diagPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "beven-startup.log");
+        var diagLock = new object();
+        void Diag(string msg) { lock (diagLock) File.AppendAllText(diagPath, $"{DateTime.Now:HH:mm:ss.fff} {msg}{Environment.NewLine}"); }
+
+        using var azureLogs = new AzureEventSourceListener((e, msg) => Diag($"[{e.EventSource.Name}] {msg}"), EventLevel.Verbose);
+        Diag("Main started");
         Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
         
         try
@@ -34,6 +40,7 @@ public static class Program
         }
         catch (Exception exception)
         {
+            Diag(exception.ToString());
             Log.Fatal(exception, "{AppTitle} terminated unexpectedly :( ", Constants.AppTitle);
         }
         finally
