@@ -9,8 +9,9 @@ public class EmailContentData : INullableObject
     public string PlainTextBody { get; init; } = Constants.INVALID_STRING;
     public string HtmlBody { get; init; } = Constants.INVALID_STRING;
     public string PasscodePlaceholder { get; init; } = Constants.INVALID_STRING;
-
-    public bool IsNullObject { get; private init; }
+    public string FirstNamePlaceholder { get; init; } = Constants.INVALID_STRING;
 
     [JsonIgnore] public static EmailContentData NullObject { get; } = new() { IsNullObject = false };
+
+    public bool IsNullObject { get; private init; }
 }

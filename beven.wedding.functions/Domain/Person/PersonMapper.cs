@@ -10,6 +10,7 @@ public class PersonMapper
         FirstName = entity.FirstName,
         LastName = entity.LastName,
         GroupAlias = entity.GroupAlias,
-        DefconLevel = Enum.TryParse<DefconLevel>(entity.DefconLevel, out var level) ? level : DefconLevel.Unknown 
+        DefconLevel = Enum.TryParse<DefconLevel>(entity.DefconLevel, out var level) ? level : DefconLevel.Unknown,
+        EmailAddress = entity.EmailAddress
     };
 }

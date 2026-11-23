@@ -33,7 +33,8 @@ public class PersonRepository(
     public async Task<PersonData> GetPersonByFullName(string firstName, string lastName)
     {
         var queryResult =
-            await _tableClient.QueryAsync<PersonEntity>(e => e.FirstName == firstName && e.LastName == lastName)
+            await _tableClient.QueryAsync<PersonEntity>(e => e.FirstName == firstName && 
+                                                             e.LastName == lastName)
                 .SingleOrDefaultAsync();
 
         return mapper.MapEntityToData(queryResult);

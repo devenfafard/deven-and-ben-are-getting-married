@@ -6,5 +6,4 @@ public class PasscodeRequestDto
 {
     public required string FirstName { get; init; } = Constants.INVALID_STRING;
     public required string LastName  { get; init; }  = Constants.INVALID_STRING;
-    public required string Email     { get; init; }  = Constants.INVALID_STRING;
 }

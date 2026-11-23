@@ -19,5 +19,6 @@ public class EmailOptionsValidator : AbstractValidator<EmailOptions>
         RuleFor(static e => e.PasscodeRequestEmailContent.Subject).NotEmpty();
         RuleFor(static e => e.PasscodeRequestEmailContent.HtmlBody).NotEmpty();
         RuleFor(static e => e.PasscodeRequestEmailContent.PasscodePlaceholder).NotEmpty();
+        RuleFor(static e => e.PasscodeRequestEmailContent.FirstNamePlaceholder).NotEmpty();
     }
 }

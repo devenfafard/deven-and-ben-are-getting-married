@@ -26,7 +26,7 @@ public class PasscodeHttpFunction(
         [HttpTrigger(AuthorizationLevel.Anonymous, WebRequestMethods.Http.Post, Route = nameof(Passcode))]
         HttpRequestData request)
     {
-        /*using var memoryStream = new MemoryStream();
+        using var memoryStream = new MemoryStream();
 
         await request.Body.CopyToAsync(memoryStream);
 
@@ -45,11 +45,12 @@ public class PasscodeHttpFunction(
 
         if (validationResult.IsValid is false)
             return BadRequestResponse(validationResult.Errors.Select(static e => e.ErrorMessage));
-        var result = await repository.GetPersonByFullName(deserializedPasscodeRequestDto.FirstName,
+        
+        var result = await repository.GetPersonByFullName(
+            deserializedPasscodeRequestDto.FirstName,
             deserializedPasscodeRequestDto.LastName);
-            */
-
-        var email = mapper.CreatePasscodeEmailMessage();
+        
+        var email = mapper.CreatePasscodeEmailMessage(result);
         
         await client.SendAsync(email);
         
