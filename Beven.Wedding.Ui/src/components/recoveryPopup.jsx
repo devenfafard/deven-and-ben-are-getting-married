@@ -35,9 +35,9 @@ const RecoveryPopup = ({showPopup, setPopup, showLoader, showForm, showSuccess, 
             {showLoader && <span className="loader"></span>}
             <div className="popupContainer">
                 <div className={"closeLogin"}><ImageButton image={CloseButton} onClick={ResetPopup}/></div>
-                <h3>Forgot Your Passcode?</h3>
 
                 {showForm && <div className={"formContainer"}>
+                    <h3>Forgot Your Passcode?</h3>
                     <p>Fill out this form and we'll send your passcode to the email address we have on file.</p>
                     <div className={"topRecContainer"}>
                         <h4>First Name:</h4>
