@@ -13,7 +13,6 @@ public class ApiResponse<T>
 
     public HttpStatusCode ResponseCode { get; init; } = HttpStatusCode.OK;
     
-    // Data returned by the request
     public T? Data { get; init; }
 
     public static ApiResponse<T> WithNullData() => new();
@@ -23,7 +22,6 @@ public class ApiResponse<T>
         Data = data
     };
     
-    // Errors
     public IEnumerable<string> Errors { get; init; } = Constants.InvalidStringEnumerable;
     
     public static ApiResponse<T> WithStatusCodeAndErrors(HttpStatusCode code, IEnumerable<string> errors) => new()

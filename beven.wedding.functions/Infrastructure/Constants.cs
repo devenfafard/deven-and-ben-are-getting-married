@@ -11,6 +11,7 @@ public static class Constants
 
     // Error messages
     public const string NO_SAFEGUARD_MESSAGE = "Cannot determine safeguard from request body";
+    public const string INVALID_REQUEST_MESSAGE = "Cannot determine required fields from request body";
 
     // Environment constants
     public static readonly string CurrentEnvironment = 
@@ -24,4 +25,12 @@ public static class Constants
     
     // File extensions
     public const string JSON_EXTENSION = ".json";
+    
+    // Validation constants
+    /*
+     * '^' asserts position at start of a string
+     * `[a-zA-Z]+` represents one or more lowercase/uppercase characters
+     * `$` asserts end of string
+     */
+    public const string OnlyAlphanumericCharactersRegex = "^[a-zA-Z]+$";
 }

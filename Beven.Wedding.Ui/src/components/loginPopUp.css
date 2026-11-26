@@ -21,30 +21,6 @@
     width: 100%;
 }
 
-.loginContainer
-{
-    display: flex;
-    align-content: start;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    height: auto;
-    width: 80%;
-    border-radius: 30px;
-    border: 1vh solid;
-    aspect-ratio: 2/1;
-
-    border-color: var(--light-green);
-    background-color: var(--tan);
-}
-
-.loginContainer h2
-{
-    width: 100%;
-    font-family: "Agbalumo", system-ui;
-    margin-bottom: 2%;
-}
-
 .closeLogin
 {
     display: flex;
@@ -63,16 +39,39 @@
     aspect-ratio: 1;
 }
 
-.loginContainer input
+.loginContainer
 {
-    width: 100%;
-    margin: 2% 10%;
+    display: flex;
+    align-content: start;
+    justify-content: center;
+    flex-wrap: wrap;
+
     height: auto;
+    width: 80%;
+    border-radius: 30px;
+    border: 1vh solid;
+    aspect-ratio: 2/1;
+    padding: 3%;
+
+    border-color: var(--light-green);
+    background-color: var(--tan);
 }
 
-.loginContainer input:invalid
+.formContainer
 {
-    border: var(--red) solid 3px;
+    display: flex;
+    align-content: start;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    height: auto;
+    width: 100%;
+}
+
+.loginContainer h2
+{
+    font-size: var(--title-size);
+    padding-bottom: 4%;
 }
 
 .submitButton
@@ -86,31 +85,45 @@
     color: var(--pure-white);
 }
 
-.loginContainer p
+.loginContainer input
 {
-    margin: 0;
+    width: 100%;
+    margin: 2% 10%;
+    height: auto;
+}
+
+.loginContainer input:invalid
+{
+    border: var(--red) solid 3px;
 }
 
 .errorText
 {
     width: 100%;
-    font-family: var(--notfancy), system-ui;
     color: var(--red);
-    margin: 0;
 }
 
-.loginContainer h4
+.loginContainer h3
 {
-    width: 100%;
-    font-family: var(--notfancy), system-ui;
-    color: var(--black);
-    margin: 2%;
-    font-size: 16px;
+    font-size: var(--smollest-size);
+}
+
+.loginContainer p
+{
+    padding: 5%;
+    font-size: var(--smollest-size)
+}
+
+.loginContainer a
+{
+    text-decoration: underline;
+    color: var(--light-red);
 }
 
 input[type=text]
 {
-    width: 80%;
+    width: 100%;
+    height: auto;
     padding: 2%;
     margin: 10px 0;
     border-radius: 50px;
@@ -123,7 +136,33 @@ input[type=text]
 {
     .loginContainer
     {
-        height: 50%;
-        width: auto;
+        padding: 0 2%;
+        height: fit-content;
+        width: 50%;
+    }
+
+    .loginContainer .formContainer h3
+    {
+        width: 100%;
+        padding-bottom: 2%;
+        font-size: var(--smoll-size)
+    }
+
+    .loginContainer p
+    {
+        display: flex;
+        align-content: start;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        height: auto;
+        width: 100%;
+        padding: 4% 0 4%;
+        font-size: var(--smoll-size)
+    }
+
+    .loginContainer a
+    {
+        padding-left: 1%;
     }
 }

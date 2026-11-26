@@ -1,8 +1,8 @@
 .home
 {
     background: linear-gradient(
-            rgba(0, 0, 0, 0.0),
-            rgba(0, 0, 0, 0.5)
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.9)
     ), url("../assets/rings-short.png") no-repeat fixed center;
     background-size: cover;
 
@@ -13,7 +13,6 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-
 
 .landing
 {
@@ -28,6 +27,11 @@
     align-items: center;
 }
 
+.landing h1
+{
+    text-shadow: var(--stole-this-glow-from-dustin);
+}
+
 .home-content
 {
     width: 100%;
@@ -39,7 +43,7 @@
     {
         background: linear-gradient(
                 rgba(0, 0, 0, 0.0),
-                rgba(0, 0, 0, 0.5)
+                rgba(0, 0, 0, 0.9)
         ), url("../assets/rings.png") no-repeat fixed center;
         background-size: cover;
     }

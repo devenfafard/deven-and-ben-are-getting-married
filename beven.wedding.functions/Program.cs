@@ -1,7 +1,14 @@
-﻿using beven.wedding.functions.Functions.Defcon;
+﻿using System.Reflection;
+using Azure.Extensions.AspNetCore.Configuration.Secrets;
+using beven.wedding.functions.Functions.Defcon;
 using beven.wedding.functions.Infrastructure;
+using beven.wedding.functions.Infrastructure.Email;
+using beven.wedding.functions.Infrastructure.Security;
+using beven.wedding.functions.Infrastructure.Storage;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using FluentValidation;
 using Serilog;
 
 namespace beven.wedding.functions;
@@ -49,11 +56,25 @@ public static class Program
     private static IHost BuildHost() =>
         Host.CreateDefaultBuilder()
             .ConfigureFunctionsWorkerDefaults()
+            .ConfigureAppConfiguration((context, builder) =>
+            {
+                // Order matters!
+                // Files must be added to the csproj!
+                builder.AddJsonFile("appsettings.json")
+                       .AddJsonFile("emailOptions.json");
+
+                var credential = context.GetAzureCredential();
+                var secret = builder.BuildKeyVaultSecretClient(credential);
+
+                builder.AddAzureKeyVault(secret, new KeyVaultSecretManager());
+            })
             .ConfigureServices(static (context, services) =>
             {
-                services.AddSingleton(context.GetAzureCredential())
+                services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), ServiceLifetime.Transient)
+                    .AddSingleton(context.GetAzureCredential())
                     .AddInfrastructureServices()
-                    .AddDefconServices();
+                    .AddDefconServices()
+                    .AddEmailServices(context.Configuration);
             })
             .Build();
 }

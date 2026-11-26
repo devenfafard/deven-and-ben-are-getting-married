@@ -3,7 +3,7 @@ import React from "react";
 import './infoCard.css';
 import Wave from '../components/wave.jsx';
 
-const infoCard = ({infoData = { color : "Transparent", title : "", body: ""}, content, showWave = true, mirrorWave = false}) =>
+const infoCard = ({infoData = { color : "Transparent", textColor: "", title : "", body: ""}, content, showWave = true, mirrorWave = false}) =>
 {
     let wave = '';
     if(showWave) {
@@ -15,9 +15,9 @@ const infoCard = ({infoData = { color : "Transparent", title : "", body: ""}, co
     }
 
     return (
-        <div className="info-card" style={{backgroundColor: infoData.color, fill: infoData.color}}>
+        <div className="info-card" style={{backgroundColor: infoData.color, fill: infoData.color, textColor: infoData.textColor}}>
             {wave}
-            <div className="info-card-content"><h2>{infoData.title}</h2><p>{infoData.body}</p>{content}</div>
+            <div className="info-card-content"><h2 style={{color: infoData.textColor}}>{infoData.title}</h2><p style={{color: infoData.textColor}}>{infoData.body}</p>{content}</div>
         </div>
     )
 }

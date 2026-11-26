@@ -55,6 +55,11 @@
     justify-content: flex-start;
 }
 
+.header-right p
+{
+    text-shadow: var(--stole-this-glow-from-dustin);
+}
+
 .header-left button
 {
     object-fit: cover;
@@ -82,6 +87,7 @@
     cursor: pointer;
     font-size: var(--smollest-size);
     color: var(--black);
+    text-shadow: var(--stole-this-glow-from-dustin);
 }
 
 .header-right p
@@ -101,6 +107,7 @@
 
 .login-button
 {
+    text-shadow: none !important;
     height: 50px;
     border-radius: 50px;
     margin: 1%;
