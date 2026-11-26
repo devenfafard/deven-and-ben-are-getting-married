@@ -7,8 +7,8 @@ const RecoveryPopup = ({showPopup, setPopup, showLoader, showForm, showSuccess, 
 {
     const [name, setName] = useState(
         {
-            firstName: "Beven",
-            lastName: "Beven",
+            firstName: "",
+            lastName: "",
         });
 
     function OnFirstInputChange(val)
