@@ -88,7 +88,7 @@ const Main = () =>
         setShowRecForm(false);
 
         const req = new Request(
-            "http://localhost:7174/api/passcode",
+            "https://beven-wedding-fx-fsghcmcrgse2deby.westus2-01.azurewebsites.net/api/passcode",
             {
                 method: "POST",
                 "Content-Type": "application/json",
@@ -174,7 +174,7 @@ const Main = () =>
                 <Route path="/" element={<Home partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} />}/>
                 <Route path="/gallery" element={<Gallery/>}/>
                 <Route path="/save-the-date" element={partyInfo.defconLevel > 0 ? <SaveTheDate/> : <Lost setLoginPopup={() => SetLoginPopup} showLogin={true}/>}/>
-                <Route path="/faq" element={<Faq partyInfo={partyInfo}/>}/>
+                <Route path="/faq" element={<Faq partyInfo={partyInfo} setRecPopup={SetRecPopup}/>}/>
                 <Route path="*" element={<Lost setLoginPopup={()=>{}} showLogin={false}/>}/>
             </Routes>
             <Footer/>

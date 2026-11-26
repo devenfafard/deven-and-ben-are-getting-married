@@ -106,8 +106,7 @@
     background-color: var(--tan);
     fill: var(--tan);
     padding-bottom: 10%;
-
-    height: auto;
+    height: fit-content;
 }
 
 .saveTheDate-locationPanel
@@ -118,7 +117,7 @@
 
     height: auto;
 
-    padding-bottom: 10%;
+    padding-bottom: 8%;
 
     font-family: var(--notfancy), system-ui;
     width: 100%;
@@ -165,6 +164,26 @@
     padding-right: 10%;
     padding-bottom: 5%;
     font-size: var(--large-body-size), system-ui;
+}
+
+.saveTheDate-faqContainer-left h2
+{
+    color: var(--tan);
+}
+
+.saveTheDate-faqContainer-left p
+{
+    color: var(--tan);
+}
+
+.saveTheDate-faqContainer-right h2
+{
+    color: var(--tan);
+}
+
+.saveTheDate-faqContainer-right p
+{
+    color: var(--tan);
 }
 
 .saveTheDate-faqContainer-right
@@ -222,12 +241,22 @@
 
     .saveTheDate-locationContainer
     {
-        padding-bottom: 3%;
+        padding-bottom: 0;
+    }
+
+    .saveTheDate-locationContainer h2
+    {
+        padding-bottom: 0.5%;
+    }
+
+    .saveTheDate-locationContainer h3
+    {
+        padding-bottom: 0.5%;
     }
 
     .saveTheDate-content-section
     {
-        padding-bottom: 5%;
+        padding-bottom: 1%;
     }
 
     .saveTheDate-faqContainer-left

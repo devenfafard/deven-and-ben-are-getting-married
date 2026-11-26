@@ -3,7 +3,7 @@ import './faq.css';
 import Wave from '../components/wave.jsx';
 import NoImage from "../assets/no.png";
 
-const Faq = ({partyInfo}) =>
+const Faq = ({partyInfo, setRecPopup}) =>
 {
     useEffect(() => {
         window.scrollTo({top: 0 ,behavior: "instant"});
@@ -24,7 +24,7 @@ const Faq = ({partyInfo}) =>
                     <div className="faq-content-section-answer">We have sent your personalized passcode to you via text or email.</div>
 
                     <div className="faq-content-section-question">What do I do if I forgot my passcode?</div>
-                    <div className="faq-content-section-answer">Send us a text or email and we can resend your passcode.</div>
+                    <div className="faq-content-section-answer"><a href={null} onClick={() => setRecPopup(true)}>Click here!</a></div>
 
                     <div className="faq-content-section-question">Can I change my passcode?</div>
                     <div className="faq-content-section-answer">
