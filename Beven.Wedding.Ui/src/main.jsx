@@ -14,6 +14,7 @@ import SaveTheDate from "./pages/saveTheDate.jsx";
 import Faq from "./pages/faq.jsx";
 import Lost from "./pages/lost.jsx";
 import LoginPopUp from "./components/loginPopUp.jsx";
+import RecoveryPopup from "./components/recoveryPopup.jsx";
 
 const Main = () =>
 {
@@ -31,7 +32,7 @@ const Main = () =>
             defconLevel: data[0]["DefconLevel"], //TODO - update shape of backup
         });
     }
-    async function onSubmit(code)
+    async function onSubmitPasscode(code)
     {
         setShowLoginLoader(true);
 
@@ -56,12 +57,14 @@ const Main = () =>
                         if(data["Value"] === null || data["Value"]["Data"]["Result"].length < 1)
                         {
                             console.log(data["Value"]["Data"]["Result"]);
+
                             setLoginError(true);
                             setShowLoginLoader(false);
                         }
                         else
                         {
                             console.log("Data fetched successfully!");
+
                             SetPartyData(data["Value"]["Data"]["Result"]);
                             setLoginPopup(false);
                         }
@@ -79,18 +82,80 @@ const Main = () =>
         }
     }
 
+    async function OnSubmitRecovery(name)
+    {
+        setRecLoader(true);
+        setShowRecForm(false);
+
+        const req = new Request(
+            "http://localhost:7174/api/passcode",
+            {
+                method: "POST",
+                "Content-Type": "application/json",
+                accept: "application/json",
+                body: JSON.stringify({FirstName: name.firstName, LastName: name.lastName}),
+            }
+        );
+
+        try
+        {
+            await fetch(req).then(response =>
+            {
+                setRecLoader(false);
+
+                if(response.ok)
+                {
+                    setShowRecSuccess(true);
+                    setShowRecError(false);
+                }
+                else
+                {
+                    setShowRecSuccess(false);
+                    setShowRecError(true);
+
+                    throw new Error(response.statusText);
+                }
+            });
+        }
+        catch(e)
+        {
+            console.log("Error fetching data: " + e)
+        }
+    }
 
     const [showLoginPopup, setLoginPopup] = useState(false);
     const [showLoginError, setLoginError] = useState(false);
-    const [showLoginLoader, setShowLoginLoader] = React.useState(false);
+    const [showLoginLoader, setShowLoginLoader] = useState(false);
+
+    const [showRecPopup, setRecPopup] = useState(false);
+    const [showRecLoader, setRecLoader] = useState(false);
+
+    const [showRecForm, setShowRecForm] = useState(true);
+    const [showRecSuccess, setShowRecSuccess] = useState(false);
+    const [showRecError, setShowRecError] = useState(false);
+
+
     function SetLoginPopup(val)
     {
         setLoginPopup(val);
 
-        if(!val)
+        if(val === false)
         {
             setLoginError(false);
             setShowLoginLoader(false);
+        }
+    }
+
+    function SetRecPopup(val)
+    {
+        setRecPopup(val);
+
+        if(val === false)
+        {
+            setShowRecForm(true);
+            setRecLoader(false);
+            setShowRecError(false);
+            setShowRecSuccess(false);
         }
     }
 
@@ -102,7 +167,8 @@ const Main = () =>
 
     return(
         <BrowserRouter>
-            <LoginPopUp showPopup={showLoginPopup} setPopup={SetLoginPopup} onSubmit={onSubmit} showErr={showLoginError} showLoader={showLoginLoader} />
+            <LoginPopUp showPopup={showLoginPopup} setPopup={SetLoginPopup} onSubmit={onSubmitPasscode} showErr={showLoginError} showLoader={showLoginLoader} showRecPopup={setRecPopup}/>
+            <RecoveryPopup showPopup={showRecPopup} setPopup={SetRecPopup} onSubmit={OnSubmitRecovery} showLoader={showRecLoader} showForm={showRecForm} showSuccess={showRecSuccess} showError={showRecError}/>
             {useMobileHeader ? <Header_M partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} /> : <Header partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} /> }
             <Routes>
                 <Route path="/" element={<Home partyInfo={partyInfo} setLoginPopup={() => SetLoginPopup} />}/>

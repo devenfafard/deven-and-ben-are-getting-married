@@ -32,6 +32,8 @@
   --large-body-size: 40px;
   --smoll-size: 28px;
   --smollest-size: 20px;
+
+  --mobile-threshold: 768;
 }
 
 h1

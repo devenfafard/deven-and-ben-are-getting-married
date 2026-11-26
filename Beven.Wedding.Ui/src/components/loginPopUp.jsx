@@ -4,7 +4,7 @@ import ImageButton from "./imageButton.jsx";
 
 import CloseButton from "../assets/CloseButton.png";
 
-const LoginPopUp = ({showPopup, setPopup, showErr, onSubmit, showLoader}) =>
+const LoginPopUp = ({showPopup, setPopup, showErr, onSubmit, showLoader, showRecPopup}) =>
 {
     const [code, setCode] = React.useState("");
 
@@ -20,14 +20,13 @@ const LoginPopUp = ({showPopup, setPopup, showErr, onSubmit, showLoader}) =>
         setCode("");
     }
 
-    if(!showPopup) {return null}
+    if(showPopup === false) {return null}
     return (
         <div className="loginPopUp">
             <button className="closeBackground" onClick={ResetPopup}/>
             {showLoader && <span className="loader"></span>}
             <div className="loginContainer">
-                <div className={"closeLogin"}><ImageButton image={CloseButton}
-                                                           onClick={ResetPopup}/></div>
+                <div className={"closeLogin"}><ImageButton image={CloseButton} onClick={ResetPopup}/></div>
                 {!showLoader && <div>
                     <h2>Enter Your Passcode:</h2>
                     {showErr && <p className={"errorText"}>Invalid passcode, please try again.</p>}
@@ -37,7 +36,7 @@ const LoginPopUp = ({showPopup, setPopup, showErr, onSubmit, showLoader}) =>
                         onSubmit(code)
                     }}>Submit
                     </button>
-                    <h4>Don't remember your passcode? Send us a text or email.</h4>
+                    <h4>Don't remember your passcode? <a href={null} onClick={() => showRecPopup(true)}>Click here!</a> </h4>
                 </div>}
             </div>
         </div>
